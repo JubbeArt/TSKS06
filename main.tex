@@ -1,0 +1,31 @@
+\documentclass[usenames,dvipsnames]{article}
+
+\usepackage[utf8]{inputenc} % Text encode
+\usepackage{graphicx} % Bilder
+\usepackage[dvipsnames]{xcolor} % Färger för tikz
+\usepackage{tikz} % Rita figurer
+\usepackage[swedish]{babel} % Svenskt datum
+\usepackage{amsmath} % Mattesymboler
+\usepackage{amssymb} % Ditto
+\usepackage{bm} % Bold in math
+\usepackage[parfill]{parskip} % Tar bort automatisk intendering vid nytt stycke
+\setlength{\parskip}{1.2em} % Avstånd mellan stycken
+\usepackage[a4paper, total={15cm, 21cm}]{geometry} % Ändrar sidobredd samt höjd
+\usepackage[none]{hyphenat} % Ingen ordbrytning (alltså när ord inte får plats)
+
+\begin{document}
+
+\include{frontpage}
+\tableofcontents\thispagestyle{empty}
+\clearpage
+
+\section{Inledning}
+\input{kapitel/1}
+
+\newpage\section{Systemanalys}
+\input{kapitel/2}
+
+\newpage\section{Sammanfattning}
+\input{kapitel/3}
+
+\end{document}

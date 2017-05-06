@@ -1,0 +1,109 @@
+En person står på en lina som är uppspänd mellan två bergskanter.
+Personens kompis skulle sedan kunna ge vikter eller heliumballonger till personen vilket skulle skapa svängningar i linan.
+Personen skulle även kunna böja på sin ben vilket skulle skapa andra svängningar i linan.
+Hur linan kommer svänga beror på många variabler till exempel personens vikt, linans längd, var på linan personen står och materialet som linan är gjord av. 
+
+Det kan vara svårt säga hur linan kommer svänga beroende på vilka av de ovanstående händelserna som sker.
+För att kunna beskriva detta fysikaliskt kommer vi skapa en modell (se Figur \ref{fig:skiss}) 
+för svängningssystemet som ett linjärt tidsinvariant (LTI) system. 
+Dessa system har egenskaper som kan användas för att analysera utsignaler beroende på
+olika insignler. 
+I detta fall är insignalen en kraft som verkar på personen när något av de ovan givna händelserna sker.
+Utsignalen är linans mittpunkts avvikelse från dess jämviktsläge.
+
+Innan vi skapar detta system måste några antaganden göras: linans vikt säger vi är försumbar samt personen och linan kommer inte påverkas av externa variabler som exempelvis väder och temperatur. 
+%Linan kan dras ut oändligt långt och kommer aldrig röra marken.
+\\\\\\\\
+\begin{figure}[h] % h = here
+    \centering
+    \scalebox{1.2}{\input{figurer/skiss.tex}}
+    \caption{En person på en lina i jämviktsläge}    
+    \label{fig:skiss}
+\end{figure}
+
+\newpage\subsection{Modell}
+
+\begin{figure}[h] % h = here
+    \centering
+    \input{figurer/modell.tex}
+    \caption{Modell av systemet med utritade krafter och riktningar}
+    \label{fig:modell}
+\end{figure}
+
+Lindansaren modelleras som en punktformad massa $m$ som sitter i mitten på linan (se Figur \ref{fig:modell}). 
+Denna massa kommer då röra sig vertikalt när den påverkas av krafter.
+Den lila streckade horisontallinjen $y_{mitt}$ är systemets referensnivå och utgör en linje mellan linans fästpunkter. $y_0$ är avståndet från referensnivån $y_{mitt}$ då systemet är i vila.
+
+\subsection{Insignal och utsignal}
+\textbf{Insignal} $\bm{x(t)}$:
+en kraft applicerad på massan $m$ i lodrät rikning med positiv riktning nedåt.
+
+\textbf{Utsignal} $\bm{y(t)}$:
+en distansavvikelse från $y_0$. Positiv riktning nedåt.
+
+\subsection{Krafter}
+För att modellera systemet korrekt är det viktigt att beskriva alla involverade krafter som verkar på $m$ (se Figur 2). Nedan följer dessa kraftbeskrivningar.
+
+$\bm{F_g}$ är tyngdkraften och beskrivs enligt: 
+$$F_g=mg$$
+där $g$ är tyngdaccelerationen. Denna kraft beror inte på positionen av punktmassan och är tidsoberoende.
+
+$\bm{F_f(t)}$ är systemets fjäderkraft. Linan påverkar massan $m$ med $F_f(t)$ på grund av spänningskrafter i linan vars resultant pekar i vertikal riktning. Enligt Hookes lag är denna kraft motriktad och proportionell mot massan $m$:s förflyttning från referensnivån $y_{mitt}$. Eftersom fjäderkraften är motriktad förflyttningen definerar vi positiv riktning för $F_f(t)$ uppåt. Massan $m$:s förflyttning från $y_{mitt}$ kan beskrivas som $y_0+y(t)$. Fjäderkraften kan alltså beskrivas som: $$F_f(t) = k(y_0+y(t))$$
+
+$\bm{F_\mu(t)}$ är en friktionskraft som uppkommer på grund av friktion i linan samt luftmotståndet. Denna kraft agerar dämpningskraft i systemet.
+Det är känt att friktionskraften motverkar massans hastighet. Eftersom hastigheten är förstaderivatan av positionen kan denna kraft beskrivas enligt: 
+$$F_\mu(t) = c\frac{dy(t)}{dt}$$
+där $c$ är någon friktionskonstant och positiv riktning för $F_\mu(t)$ är uppåt.
+
+\subsection{Differentialekvation}
+Den resulterande kraften som verkar på $m$ kan skrivas som summan av alla krafter som verkar på $m$. Vi summerar krafterna med positiv riktning nedåt. Detta gör att krafter definerade med positiv riktning uppåt (se Figur 2) subtraheras. Enligt Newtons andra lag kan den resulterande kraften även skrivas som massan multiplicerat med accelerationen, varpå accelerationen kan uttryckas som lägets andraderivata. Då dessa är ekvivalenta kan vi skriva:
+
+$$m\frac{d^{2}y(t)}{dt^{2}} = x(t) - F_\mu(t) - F_f(t) + F_g$$
+
+Med insättning av uttrycken för $F_\mu(t)$, $F_f(t)$ och $F_g$ samt omflyttning av ekvationen så att alla termer som innehåller $y(t)$ finns i vänsterled och $x(t)$ finns i högerled fås: 
+
+\begin{equation}
+m\frac{d^{2}y(t)}{dt^{2}} + c\frac{dy(t)}{dt} + k(y_{0}+y(t)) - mg=x(t)    
+\end{equation}
+
+I viloläget gäller: 
+$$x(t) = y(t) = \frac{dy(t)}{dt} = \frac{d^{2}y(t)}{dt^{2}} = 0 $$
+
+Vid insättning av dessa värden i (1) fås:
+$$ky_{0} - mg = 0$$
+
+vilket ger följande differentialekvation:
+
+\begin{center}
+    \framebox[1.1\width]{$m\displaystyle\frac{d^2y(t)}{dt^2} + c\displaystyle\frac{dy(t)}{dt} + ky(t)=x(t)$} 
+    \par
+\end{center}
+Differentialekvationen ovan beskriver förhållandet mellan insignalen $x(t)$ och utsignalen $y(t)$. 
+Denna differentialekvation kommer längre fram i rapporten tillsammans med Laplacetransformen användas för att beskriva diverse systemegenskaper. 
+
+\subsection{Linjäritet}
+För att systemet som vi har valt ska vara ett LTI system måste det vara linjärt och tidsinvariant. I denna rapport kommer vi inte visa att systemet är tidsinvariant men vi kommer visa att systemet är linjärt. För att kunna visa detta behöver vi först definiera vad som menas med att system är linjärt. Detta innebär att den ska uppfylla två kriterier: systemet ska vara additivt och det ska vara homogent.
+
+Betrakta ett system där godtyckliga insignaler $x_1(t)$ och $x_2(t)$ ger upphov till utsignalerna $y_1(t)$ respektive $y_2(t)$. För att ett sådant system ska vara additivt måste den sammansatta insignalen $x(t)=x_1(t)+x_2(t)$ ge upphov till utsignalen $y(t)=y_1(t)+y_2(t)$.
+
+Att ett system är homogent innebär att en insignal till systemet multiplicerat med en konstant ger upphov till en utsignal multiplicerat med samma konstant. Det vill säga om en insignal $x(t)$ till systemet ger upphov till en utsignal $y(t)$, ger insignalen $ax(t)$ upphov till utsignalen $ay(t)$, där a är en godtycklig konstant.
+
+\subsection{Bevis av linjäritet}
+För att visa att ett system är linjärt behöver man visa att det uppfyller båda kriterierna som presenterats ovan. 
+Givet att insignalerna $x_1(t)$ och $x_2(t)$ ger utsignalerna $y_1(t)$ respektive $y_2(t)$ så kan man bevisa att båda kriterierna uppfylls  genom att visa att insignalen $ax_1(t) + bx_2(t)$ ger utsignalen $ay_1(t) + by_2(t)$, där a och b är godtyckliga konstanter.
+
+Här utnyttjas att $x(t)$  kan bytas ut till differentialekvationen ovan samt det faktum att derivator är linjära.
+\begin{equation*} \label{eq1.6a}
+\begin{split}
+x(t)
+&=ax_1(t)+bx_2(t)\\
+&=a\left(m\frac{d^2y_1(t)}{dt^2}+c\frac{dy_1(t)}{dt}+ky_1(t)\right)+b\left(m\frac{d^2y_2(t)}{dt^2}+c\frac{dy_2(t)}{dt}+ky_2(t)\right)\\
+&=m\frac{d^2(ay_1(t)+by_2(t))}{dt^2}+c\frac{d(ay_1(t)+by_2(t))}{dt}+k(ay_1(t)+by_2(t))\\
+&=m\frac{d^2y(t)}{dt^2}+c\frac{dy(t)}{dt}+ky(t)\\
+\end{split}
+\end{equation*} 
+
+
+där $y(t)=ay_1(t)+by_2(t)$. $\blacksquare$
+
+Man ser alltså att insignaler kan slås ihop så att de bildar en ihopslagen utsignal av systemt. Detta skulle till exempel kunna vara då man slänger två stycken 5kg vikter till lindanseren vilket skulle vara exakt samma sak som då man slänger en 10kg vikt. 
