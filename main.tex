@@ -11,7 +11,15 @@
 \usepackage[parfill]{parskip} % Tar bort automatisk intendering vid nytt stycke
 \setlength{\parskip}{1.2em} % Avstånd mellan stycken
 \usepackage[a4paper, total={15cm, 21cm}]{geometry} % Ändrar sidobredd samt höjd
-\usepackage[none]{hyphenat} % Ingen ordbrytning (alltså när ord inte får plats)
+%\usepackage[none]{hyphenat} 
+%\righthyphenmin=62
+%\lefthyphenmin=62
+\usepackage{hyperref} % Länkar
+\tolerance=1    % Ingen ordbrytning (alltså när ord inte får plats)
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
 
 \begin{document}
 
@@ -25,7 +33,10 @@
 \newpage\section{Systemanalys}
 \input{kapitel/2}
 
-\newpage\section{Sammanfattning}
+\newpage\section{Diskussion}
 \input{kapitel/3}
+
+\newpage\section{Sammanfattning}
+\input{kapitel/4}
 
 \end{document}
