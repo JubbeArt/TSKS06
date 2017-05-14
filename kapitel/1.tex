@@ -1,14 +1,12 @@
-En person står på en lina som är uppspänd mellan två bergskanter.
-Personens kompis skulle sedan kunna ge vikter eller heliumballonger till personen vilket skulle skapa svängningar i linan.
-Personen skulle även kunna böja på sin ben vilket skulle skapa andra svängningar i linan.
+En person står på en lina som är uppspänd mellan två bergskanter. När personen påverkas av en kraft uppstår svängningar i linan.
+Man skulle exempelvis kunna påverka personen med krafter genom att ge denne vikter eller heliumballonger. Alternativt skulle personen kunna böja på sin ben vilket skulle skapa andra svängningar i linan.
 Hur linan kommer svänga beror på många variabler till exempel personens vikt, linans längd, var på linan personen står och materialet som linan är gjord av. 
 
 Det kan vara svårt säga hur linan kommer svänga beroende på vilka av de ovanstående händelserna som sker.
 För att kunna beskriva detta fysikaliskt kommer vi skapa en modell (se Figur \ref{fig:skiss}) 
 för svängningssystemet som ett linjärt tidsinvariant (LTI) system. 
-Dessa system har egenskaper som kan användas för att analysera utsignaler beroende på
-olika insignler. 
-I detta fall är insignalen en kraft som verkar på personen när något av de ovan givna händelserna sker.
+Dessa system har egenskaper som kan användas för att analysera utsignaler beroende på olika insignler. 
+I detta fall är insignalen den kraft som verkar på personen.
 Utsignalen är linans mittpunkts avvikelse från dess jämviktsläge.
 
 Innan vi skapar detta system måste några antaganden göras: linans vikt säger vi är försumbar samt personen och linan kommer inte påverkas av externa variabler som exempelvis väder och temperatur. 
@@ -50,8 +48,7 @@ där $g$ är tyngdaccelerationen. Denna kraft beror inte på positionen av punkt
 
 $\bm{F_f(t)}$ är systemets fjäderkraft. Linan påverkar massan $m$ med $F_f(t)$ på grund av spänningskrafter i linan vars resultant pekar i vertikal riktning. Enligt Hookes lag är denna kraft motriktad och proportionell mot massan $m$:s förflyttning från referensnivån $y_{mitt}$. Eftersom fjäderkraften är motriktad förflyttningen definerar vi positiv riktning för $F_f(t)$ uppåt. Massan $m$:s förflyttning från $y_{mitt}$ kan beskrivas som $y_0+y(t)$. Fjäderkraften kan alltså beskrivas som: $$F_f(t) = k(y_0+y(t))$$
 
-$\bm{F_\mu(t)}$ är en friktionskraft som uppkommer på grund av friktion i linan samt luftmotståndet. Denna kraft agerar dämpningskraft i systemet.
-Det är känt att friktionskraften motverkar massans hastighet. Eftersom hastigheten är förstaderivatan av positionen kan denna kraft beskrivas enligt: 
+$\bm{F_\mu(t)}$ är en friktionskraft som uppkommer på grund av friktion i linan samt luftmotståndet. Denna kraft kan antas vara modelerbar som en viskös dämpningskraft.En viskös dämpningskraft motverkar hastigheten. Eftersom hastigheten är förstaderivatan av positionen kan denna kraft beskrivas enligt: 
 $$F_\mu(t) = c\frac{dy(t)}{dt}$$
 där $c$ är någon friktionskonstant och positiv riktning för $F_\mu(t)$ är uppåt.
 
@@ -106,4 +103,6 @@ x(t)
 
 där $y(t)=ay_1(t)+by_2(t)$. $\blacksquare$
 
-Man ser alltså att insignaler kan slås ihop så att de bildar en ihopslagen utsignal av systemt. Detta skulle till exempel kunna vara då man slänger två stycken 5kg vikter till lindanseren vilket skulle vara exakt samma sak som då man slänger en 10kg vikt. 
+Man ser att insignaler kan slås ihop så att de bildar en ihopslagen utsignal av systemet. Exempelvis är det helt ekvivalent att slänga två 5kg vikter samtidigt till lindansare som att slänga en vikt på 10 kg.
+ 
+
