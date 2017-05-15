@@ -73,19 +73,19 @@ För att få en bättre förståelse av systemfunktionen kommer poler, nollstäl
 $$K=\frac{1}{m}$$
 Nedan visas pol-nollställediagramen för de 3 olika fallen för polerna. Enligt standardnotation representerar kryssen poler och cirklar nollställen, dock uppstod inga nollställen. De rödsträckade området är konvergensområdet.
 
-\begin{figure}[H] % h = here
+\begin{figure}[H] 
     \centering
     \includegraphics[scale=0.33]{bilder/pol_nollstallediagram_2_poler}
     \caption{Pol-nollställediagram för 2 skilda reella poler}
     \label{fig:pol_nollstallediagram_2_poler}
 \end{figure}
-\begin{figure}[H] % h = here
+\begin{figure}[H] 
     \centering
     \includegraphics[scale=0.33]{bilder/pol_nollstallediagram_dubbelpol}
     \caption{Pol-nollställediagram för en reell dubbelpol}
     \label{fig:pol_nollstallediagram_dubbelpol}
 \end{figure}
-\begin{figure}[H] % h = here
+\begin{figure}[H] 
     \centering
     \includegraphics[scale=0.33]{bilder/pol_nollstallediagram_komplexa_poler}
     \caption{Pol-nollställediagram för två komplexkonjugerade poler}
@@ -97,7 +97,7 @@ Nedan visas pol-nollställediagramen för de 3 olika fallen för polerna. Enligt
 Vi ska nu se hur vårt system reagerar olika på typer en insignaler. En vanligt signal som studeras är enhetsimpulsen också kallad Dirac-pulsen, $\delta(t)$. 
 Enhetsimpulsen är noll för alla värden $t\ne 0$. Vid $t = 0$ är den oändligt stor så att dess area är lika med $1$. Det är svårt att föreställa hur detta skulle representera sig fysikalisk i vår modell. Ett ungefärligt exempel skulle vara då man släpper en tennisboll från en hög höjd som träffar personen på huvudet och studsar bort. 
 
-Impulssvaret $h(t)$ är utsignalen då ett system tar emot en enhetsimpuls som insignal. Denna kan räknas ut genom att inverstransformera systemfunktionen $H(s)$. Vi kommer återigen att använda tabeller för dessa beräkningar då integralerna är jobbiga att räkna ut. Man får istället problemet att skriva om uttrycken så att de matchar något i tabellen. Då det finns 3 uppsättningar av poler kommer implussvaret för dessa räknas ut separat.
+Impulssvaret $h(t)$ är utsignalen då ett system tar emot en enhetsimpuls som insignal. Denna kan räknas ut genom att inverstransformera systemfunktionen $H(s)$. Vi kommer återigen att använda tabeller för dessa beräkningar då integralerna är jobbiga att räkna ut. Man får istället problemet att skriva om uttrycken så att de matchar något i tabellen. Då det finns tre uppsättningar av poler kommer implussvaret för dessa räknas ut separat.
 
 \begin{itemize}
     \item Vid 2 skilda reella poler kan vi faktorisera rötterna i nämnarpolynomet och partialbråksuppdela för att hitta en lämplig inverstransform.
@@ -122,74 +122,108 @@ Impulssvaret $h(t)$ är utsignalen då ett system tar emot en enhetsimpuls som i
 \end{itemize}
 
 \subsubsection{Val av systemparametrar}
-Innan de 3 olika impulssvaren ska ritas ut (\textbf{finns bättre ord här}) så ska några standarder (\textbf{finns bättre ord här}) sättas för systemparametrarna. Dessa bestämmer hur systemen beter sig och är i vårt fall de 3 hittills obestäma konstanterna: massan  $m$, fjäderkonstanten $k$ och dämpningskonstanten $c$. För att se hur olika parameteruppsättningar skilljer sig åt komma vi variera dessa en i taget medan de andra två behålls konstanta. (\textbf{Kom ihåg, två parameteruppsättningar = två olika system != samma system med olika variabler i})
+För att kunna visualisera och analysera impulssvaren måste först systemparametrarna bestämmas. Dessa bestämmer hur systemen beter sig och är i vårt fall de tre hittills obestämda konstanterna massan  $m$, fjäderkonstanten $k$ och dämpningskonstanten $c$. Vi bestämmer en standarduppsättnnig för systemparametrarna. För att se hur system med olika parameteruppsättningar skiljer sig åt kommer en parameter i taget varieras medan de andra två hålls konstanta.
 
-Valet av systemparametrar baseras på scenariot som beskriv i inledningen. Den första parametern som kommer bestämmas är massan. Denna bestäms vara $75$ kg (\textbf{ska detta skrivas ihop till 75kg?}),  vilket är den ungefärliga medelvikten hos svenska män och kvinnor \href{http://www.scb.se/sv_/Hitta-statistik/Statistik-efter-amne/Levnadsforhallanden/Levnadsforhallanden/Undersokningarna-av-levnadsforhallanden-ULFSILC/12202/2012A02B/Behallare-for-Press/6-kilo-mer-man-och-4-kilo-mer-kvinna/}{\textbf{REFERENS}}.
+Valet av systemparametrar baseras på scenariot som beskrivs i inledningen. Den första parametern som kommer bestämmas är massan. Denna bestäms vara $75$ kg,  vilket är den ungefärliga medelvikten hos svenska män och kvinnor enligt Statistiska centralbyrån.
 Nästa parameter är dämpningskonstanten vilket härleds från differentialekvationen i viloläget, där konstanten $k$ kan skrivas som:
-$$k=\frac{mg}{y_0}$$
-Vi måsta alltså bestäma en rimlig utdragning av linan i viloläget för att sedan räkna ut $k$. Vi anser att en rimligt utdragning av linan är $1$ m (\textbf{alt 0.5 m}) efter att studerat bilder och filmklipp av riktiga lindansare. Vi antar att jordens tyngdacceleration kan approximeras till $g=9.82$. Då blir fjäderkonstanten:
-$$k=\frac{75 \cdot 9.82}{1}\approx 737 \text{ N/m}$$
+\newline$$k=\frac{mg}{y_0}$$\newline
+Vi måsta därför bestämma en rimlig utdragning av linan i viloläget för att sedan räkna ut $k$. Vi anser att en rimligt utdragning av linan är $0.5$ m efter att studerat bilder och filmklipp av riktiga lindansare. Vi antar att jordens tyngdacceleration $g$ kan approximeras till $9.82$. Då beräknas fjäderkonstanten till:
+\newline$$k=\frac{75 \cdot 9.82}{0.5}=1473 \text{ N/m}$$
 
-Sist har vi dämpningskonstanten $c$ som är ganska svår att bestämma. Denna kan bestämas med till exempel experiment där man mäter hur mycket systemet dämpar en insignal. Detta är inte möjligt i vårt fall och vi behöver därför resonera oss fram till ett rimligt värde. Dämpningskonstanten kommer bestäma typen av system alltså vilken typ av poler som bildas. Vi vill att systemet dämpar insingaler så lindansaren har lättare att balansera sig på linan. Man vill fortfrande ha lite gung i linan men den vara väldigt begränsad (\textbf{Typ bullshit de jag just sa, men håller ni med?}). Vi får denna effekt då vi har 2 skilda reella poler och kravet för det var:
+Sist har vi dämpningskonstanten $c$ som är svår att bestämma. Denna kan bestämmas till exempel experimentellt genom att mäta hur mycket systemet dämpar en insignal. Detta är inte möjligt i vårt fall och vi behöver därför resonera oss fram till ett rimligt värde. Dämpningskonstanten kommer bestämma typen av system alltså vilken typ av poler som bildas. Vi vill att systemet dämpar insingaler så lindansaren har lättare att balansera sig på linan. Man vill fortfrande ha lite gung i linan men den ska vara väldigt begränsad. Vi får denna effekt då vi har två skilda reella poler och kravet för det var:
 $$\frac{c^2}{4m} > k $$
 Löser vi ut $c$ och stoppar in värdena från innan får vi:
-$$c>\sqrt{4km}=\sqrt{4\cdot 737\cdot 75} \approx 740$$
-Vi väljer att $c=1000$ \textbf{ENHET HÄR} för att skapa heltalsrötter i andra ekvationer. (\textbf{dummaste motiveringen egentligen..., den skapar inte ens hela rötter bara approximativa löl}).
+$$c>\sqrt{4km}=\sqrt{4\cdot 1473\cdot 75} \approx 665$$
+Vi väljer att $c=700$ kg/s för att skapa heltalsrötter i andra ekvationer. (\textbf{dummaste motiveringen egentligen..., den skapar inte ens hela rötter bara approximativa löl. HITTA EN BÄTTRE MOTVERING}).
 
-Standardparameteruppsättningen (bästa ordet jag kan komma på) kan sammanfattas (till? som?)
+Standardparameteruppsättningen sammanställs då som:
 
 $\begin{cases}
-m=75 \text{ kg} \\
-k=737 \text{ N/m} \\
-c=1000 \text{ ENHET HÄR}
+\begin{aligned}
+m&=75 \text{ kg} \\
+k&=1473 \text{ N/m} \\
+c&=700 \text{ kg/s}
+\end{aligned}
 \end{cases}$
 
-
-\textbf{När 75kg vs 75 kg har bestämst: gå tillbaka till slutet av kapitel 1 och fixa de där också}.
-
-kanske försöka koppla variationen till verkligheten, massa = lättare/tyngre person. fjäder = lättare spänd lina(?). dämpningskonstant = annat material på lina (också ???).
-nämn standardvariation här eller senare?
+(kanske försöka koppla variationen till verkligheten, massa = lättare/tyngre person. fjäder = lättare spänd lina(?). dämpningskonstant = annat material på lina (också ???).
+nämn standardvariation här eller senare?)
 
 \subsubsection{Variation av impulssvaret}
-Hitta en bättre titel. kanske ''variation av impulssvaret''?
+Vi ska nu undersöka impulssvaret grafiskt för de parametrar vi har valt och vad som händer om dessa ändras. Först är vi intresserad av hur impulssvaret beter sig med våra standardparameteruppsättning alltså att $m = 75$ kg, $k=1473$ N/m och $c=700$ kg/s. Detta visas i figuren nedan.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/impulssvar}
+    \caption{Impulssvar med standardparameteruppsättning}
+    \label{fig:impulssvar}
+\end{figure}
+Vi ser att impulssvaret snabbt avtar och efter cirka två sekunder är den ungefär tillbaka till den position där den startade. Den oscillerar inte kring viloläget vilket var den effekt vi ville ha.
 
+\newpage
+Följande figur illustrerar vad som händer då massan $m$ varierar. För att lätt kunna se vad som skiljer sig åt jämförs standardmassan med massorna $20$ kg och $200$ kg. I verkligheten skulle detta vara att personer med olika vikt står på linan.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/impulssvar_variation_m}
+    \caption{Impulssvar med varierande massa}
+    \label{fig:impulssvar_variation_m}
+\end{figure}
+Vi ser att tyngre personer får lägre amplitud än lättare personer. (\textbf{Dock så ... Fixa detta})
 
+\newpage
+För att få rimliga värden på $k$ betraktas linans utdragslängd $y_0$ från mittpunkten i olika lägen. Vi studerar utdragslängerna $2$ m och $0.25$ m. Detta ger fjäderkonstanen $370$ N/m respektive $3000$ N/m. Figuren nedan visar impulssvaret för de olika fjäderkonstanterna. (\textbf{vad betyder detta i vårt system?})
+\begin{figure}[H] 
+    \centering
+    \includegraphics[scale=0.9]{bilder/impulssvar_variation_k}
+    \caption{Impulssvar med varierande fjäderkonstant}
+    \label{fig:impulssvar_variation_k}
+\end{figure}
+Här ser vi tydligt att lägre fjäderkonstant gör att massan tar mycket längre tid att ta sig tillbaka till viloläget. (\textbf{I verkligheten .... Fixa detta})
+
+\newpage
+Nedan undersöks vad som händer då $c$ ändras. I figuren nedan visas impulssvaret då dämpningskonstanten halveras samt fördubblas.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/impulssvar_variation_c}
+    \caption{Impulssvar med varierande dämpningskonstant}
+    \label{fig:impulssvar_variation_c}
+\end{figure}
+Vid lägre dämpningskonstant så dämpar systemet mindre och vi får en högre amplitud. Vid låg dämpning så går den också över viloläget då den inte har hunnit dämpa insignalen tillräckligt. I de andra två fallen minskar den utan oscillation och med en lägre toppamplitud desto högre dämpningskonstanten är.
 
 \newpage
 \subsection{Stegsvar}
-En annan insignal som vi ska studera är enhetssteget $u(t)$. Detta är en plötslig förändring av insignalen från $0$ till $1$ enligt:
+En annan insignal vi ska studera är enhetssteget $u(t)$. Detta är en plötslig förändring av insignalen från $0$ till $1$ enligt:
 $$u(t)=\begin{cases} 1, & \text{om } t \ge 0 \\ 0, & \text{om } t < 0\end{cases}$$
-När ett system matas med ett enhetssteg så får man stegsvaret $g(t)$ som utsignal. Eftersom vårt system är linjärt kan denna utsignal beräknas genom att falta enhetssteget med impulssvaret som har beräknats innan. Denna uträkning kan sedan förenklas till en integral över bara impulssvaret enligt:
+När ett system matas med ett enhetssteg får man stegsvaret $g(t)$ som utsignal. Detta kan i vårt system representeras av att en vikt kastas till personen på linan. Eftersom vårt system är linjärt kan denna utsignal beräknas genom att falta enhetssteget med impulssvaret som har beräknats innan. Denna uträkning kan sedan förenklas till en integral över bara impulssvaret enligt:
 $$g(t)=(u*h)(t)=\int\limits_{-\infty}^{\infty}h(\tau)\,u(t-\tau)\,d\tau=\int\limits_{-\infty}^{t}h(\tau)\,d\tau$$
-(\textbf{vad skulle detta vara i vårt system})
-Då vi har 3 typer av generella system så har vi räknat ut 3 olika impulssvar och kommer därför också räkna ut 3 olika stegsvar. ... behåller vi konstanterna som valdes då impulsvaren räknades ut. Eftersom alla impulssvar har en term av enhetsteget i sig så blir faltning alltid $0$ då $t < 0$. Här beräknar vi vad som händer då $t \ge 0$.
+Våra tre typer av generella system ger upphov till tre olika impulssvar och kommer därför även ge upphov till tre olika stegsvar. För att beräkna dessa tre stegsvar behåller vi standardparameteruppsättningen som valdes då impulsvaren beräknades. Eftersom alla impulssvar har en faktor av enhetsteget ges inget bidrag till faltningsintegralen då $t < 0$. Nedan beräknas vad som händer då $t \ge 0$ (\textbf{EHHH TYP FAST TYP INTE, tycker det är oklart då vi säger ''ges inget bidrag'', jag menar det vi vill säga att integralen blir noll. Då folk säger ''ger inget bidrag'' har man oftast bidrag från någon annan term, annars finns det ju ingen mening att säga så}).
 
 \begin{itemize}
-    \item Vid 2 skilda reella poler så kan vi direkt integrera exponentialfunktionerna.
-    $$g_1(t)=\int\limits_{-\infty}^{t}\dfrac{1}{2m\omega_0}\bigg(e^{-(\alpha-\omega_0)\tau}-e^{-(\alpha+\omega_0)\tau}\bigg)u(\tau)\,d\tau
-    =\dfrac{1}{2m\omega_0}\int\limits_{0}^{t}\bigg(e^{-(\alpha-\omega_0)\tau}-e^{-(\alpha+\omega_0)\tau}\bigg)\,d\tau$$
-    $$=\dfrac{1}{2m\omega_0}\bigg[\frac{e^{-(\alpha+\omega_0)\tau}}{(\alpha+\omega_0)}-\frac{e^{-(\alpha-\omega_0)\tau}}{(\alpha-\omega_0)} \bigg]_{\tau=0}^{\tau=t}
-    =\dfrac{1}{2m\omega_0(\alpha^2-\omega_0^2)}\bigg((\alpha-\omega_0)e^{-(\alpha+\omega_0)t}-(\alpha+\omega_0)e^{-(\alpha-\omega_0)t}+2\omega_0\bigg)$$
-    \\
-    \item Vid dubbelpol så används partiell integration en gång för lösa integralen.
-    $$g_1(t)=\dfrac{1}{m}\int\limits_{0}^{t}\tau e^{-\alpha \tau}\,d\tau=
-    \dfrac{1}{m} \bigg[\dfrac{\tau e^{-\alpha \tau}}{-\alpha}\bigg]_{\tau=0}^{\tau=t}+\dfrac{1}{m\alpha}\int\limits_{0}^{t}e^{-\alpha \tau}\,d\tau$$
-    $$=-\dfrac{1}{m\alpha^2}\alpha te^{-\alpha t}+\dfrac{1}{m\alpha}\bigg[\dfrac{e^{-\alpha \tau}}{-\alpha}\bigg]_{\tau=0}^{\tau=t}=
-    \dfrac{1}{m\alpha^2}\bigg(1-e^{-\alpha t}(\alpha t+1)\bigg)$$
+    \item Vid två skilda reella poler kan vi direkt integrera exponentialfunktionerna.
+    $$\begin{aligned}
+    g_1(t)
+    &=\int\limits_{-\infty}^{t}\dfrac{1}{2m\omega_0}\bigg(e^{-(\alpha-\omega_0)\tau}-e^{-(\alpha+\omega_0)\tau}\bigg)u(\tau)\,d\tau
+    \\&=\dfrac{1}{2m\omega_0}\int\limits_{0}^{t}\bigg(e^{-(\alpha-\omega_0)\tau}-e^{-(\alpha+\omega_0)\tau}\bigg)\,d\tau
+    \\&=\dfrac{1}{2m\omega_0}\bigg[\frac{e^{-(\alpha+\omega_0)\tau}}{(\alpha+\omega_0)}-\frac{e^{-(\alpha-\omega_0)\tau}}{(\alpha-\omega_0)} \bigg]_{\tau=0}^{\tau=t}
+    \\&=\dfrac{1}{2m\omega_0(\alpha^2-\omega_0^2)}\bigg((\alpha-\omega_0)e^{-(\alpha+\omega_0)t}-(\alpha+\omega_0)e^{-(\alpha-\omega_0)t}+2\omega_0\bigg)\end{aligned}$$
+    \item Vid dubbelpol används en partiell integration för att lösa integralen.
+    $$\begin{aligned}g_1(t)&=\dfrac{1}{m}\int\limits_{0}^{t}\tau e^{-\alpha \tau}\,d\tau
+    \\&=\dfrac{1}{m} \bigg[\dfrac{\tau e^{-\alpha \tau}}{-\alpha}\bigg]_{\tau=0}^{\tau=t}+\dfrac{1}{m\alpha}\int\limits_{0}^{t}e^{-\alpha \tau}\,d\tau
+    \\&=-\dfrac{1}{m\alpha^2}\alpha te^{-\alpha t}+\dfrac{1}{m\alpha}\bigg[\dfrac{e^{-\alpha \tau}}{-\alpha}\bigg]_{\tau=0}^{\tau=t}
+    \\&=\dfrac{1}{m\alpha^2}\bigg(1-e^{-\alpha t}(\alpha t+1)\bigg)\text{\hspace{6cm}\,}\end{aligned}$$
     \newpage
-    \item Vid komplexkonjugerade poler så används upprepad partiell integraion. Då får man tillbaka uttrycket som man hade från början och kan på så sätt lösa ut stegsvaret.
-    $$g_1(t)=\dfrac{1}{m\omega_0}\int\limits_{0}^{t} e^{-\alpha \tau} \sin(\omega_0 \tau)\,d\tau
-    =\dfrac{1}{m\omega_0}\bigg[\dfrac{e^{-\alpha \tau}\sin(\omega_0 \tau)}{-\alpha}\bigg]_{\tau=0}^{\tau=t}+\dfrac{1}{m\alpha}\int\limits_{0}^{t} e^{-\alpha \tau} \cos(\omega_0\tau)\,d\tau$$
-    $$=-\dfrac{e^{-\alpha t}\sin(\omega_0 t)}{m\omega_0\alpha}+\dfrac{1}{m\alpha}\bigg[\dfrac{e^{-\alpha \tau}\cos(\omega_0 \tau)}{-\alpha}\bigg]_{\tau=0}^{\tau=t}-\dfrac{\omega_0}{m\alpha^2}\int\limits_{0}^{t}e^{-\alpha \tau} \sin(\omega_0 \tau)\,d\tau$$
-    $$=-\dfrac{e^{-\alpha t}\sin(\omega_0 t)}{m\omega_0\alpha}+\dfrac{1-e^{-\alpha t}\cos(\omega_0 t)}{m\alpha^2}-\dfrac{\omega_0^2}{\alpha^2}\,g_1(t)$$
-    
-    $$\Longleftrightarrow g_1(t)
-    =\dfrac{\omega_0-e^{-\alpha t}(\alpha\sin(\omega_0 t)+\omega_0\cos(\omega_0 t))}{m\omega_0(\alpha^2+\omega^2)}$$
+    \item Vid komplexkonjugerade poler används upprepad partiell integraion tills man får tillbaka uttrycket man hade från början och kan på så sätt lösa ut stegsvaret.
+    $$\begin{aligned}
+    g_1(t)&=\dfrac{1}{m\omega_0}\int\limits_{0}^{t} e^{-\alpha \tau} \sin(\omega_0 \tau)\,d\tau
+    \\&=\dfrac{1}{m\omega_0}\bigg[\dfrac{e^{-\alpha \tau}\sin(\omega_0 \tau)}{-\alpha}\bigg]_{\tau=0}^{\tau=t}+\dfrac{1}{m\alpha}\int\limits_{0}^{t} e^{-\alpha \tau} \cos(\omega_0\tau)\,d\tau
+    \\&=-\dfrac{e^{-\alpha t}\sin(\omega_0 t)}{m\omega_0\alpha}+\dfrac{1}{m\alpha}\bigg[\dfrac{e^{-\alpha \tau}\cos(\omega_0 \tau)}{-\alpha}\bigg]_{\tau=0}^{\tau=t}-\dfrac{\omega_0}{m\alpha^2}\int\limits_{0}^{t}e^{-\alpha \tau} \sin(\omega_0 \tau)\,d\tau
+    \\&=-\dfrac{e^{-\alpha t}\sin(\omega_0 t)}{m\omega_0\alpha}+\dfrac{1-e^{-\alpha t}\cos(\omega_0 t)}{m\alpha^2}-\dfrac{\omega_0^2}{\alpha^2}\,g_1(t)
+    \\\Longleftrightarrow g_1(t)
+    &=\dfrac{\omega_0-e^{-\alpha t}(\alpha\sin(\omega_0 t)+\omega_0\cos(\omega_0 t))}{m\omega_0(\alpha^2+\omega^2)}\end{aligned}$$
 \end{itemize}
-Eftersom dessa tre stegsvar bara gäller då $t\ge 0$ så kommer de multipliceras med enhetssteget för ett fullständigt stegsvar enligt:
+Eftersom dessa tre stegsvar bara gäller då $t\ge 0$ kommer de multipliceras med enhetssteget för ett fullständigt stegsvar enligt:
 $$g(t)=g_1(t)\cdot u(t)$$
-Detta ger att stegsvaren för reella poler, dubbelpol respektive komplexa poler blir:
+Detta ger att stegsvaren för reella poler, dubbelpol respektive de komplexa polerna, blir:
 
 $\begin{cases}
 g(t)=\dfrac{(\alpha-\omega_0)e^{-(\alpha+\omega_0)t}-(\alpha+\omega_0)e^{-(\alpha-\omega_0)t}+2\omega_0}{2m\omega_0(\alpha^2-\omega_0^2)}\,u(t) \\\\
@@ -199,52 +233,106 @@ g(t)=\dfrac{\omega_0-e^{-\alpha t}(\alpha\sin(\omega_0 t)+\omega_0\cos(\omega_0 
 
 \textbf{Förslag för förtydligande: Döpa om alla $h(t)$ till $h_r(t)$, $h_d(t)$  och $h_k(t)$ för reella, dubbel och komplex, alt. $h_1(t), h_2(t), h_3(t)$}
 
-\subsubsection{Variation av stegsvaret}
 \newpage
-\subsection{Rampsvar}
-Är detta relevant?
-((= Dampsvar?! det enda dampsvaret här är du....),förmodligen inte)
-Tydligen är detta relevant även fast de aldrig kommer hända i verkligheten. Tack Lasse!
+\subsubsection{Variation av stegsvaret}
+Vi vill nu se hur stegsvaret beter sig för olika parameteruppsättningar. För att se hur impulssvar och stegsvaret relaterar till varandra kommer vi använda samma parametrar som vi gjorde för variationen av impulssvaret. Igen så börjar vi kolla vad som händer med vår standardparameteruppsättning, alltså då $m = 75$ kg, $k=1473$ N/m och $c=700$ kg/s. Detta göras nedan i figuren.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/stegsvar}
+    \caption{Stegsvar med standardparameteruppsättning}
+    \label{fig:stegsvar}
+\end{figure}
+Vi ser att efter cirka 1.5 sekunder har den nått ett nytt läge längre ned. Detta görs utan ocellation kring de nya viloläget. Detta skulle i verkligheten vara som  att kasta en vikt på ungefär $0.1$ kg till lindansren.
 
-Tror detta kommer skippas pga tidsbirst och brist på plats
+\newpage
+Nu vill vi kolla vad som händer då massan förändras. Igen så används massorna $20$ kg och $200$ kg som representerar en lättare och tyngre person på linan.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/stegsvar_variation_m}
+    \caption{Stegsvar med varierande massa}
+    \label{fig:stegsvar_variation_m}
+\end{figure}
+Här ser inte så stor skilnad på 3 olika massorna, de närmar sig de nya höjdläget vid ungefär samma tidpunkt. Den tyngre massan tar längre tid på sig att börja röra sig men kommer också längre ned än de andra två och skapar också oscillation.
+Vi kan också notera att massan inte påverkar nivåkonstanten då dessa går mot samma jämviktsläge.
+
+\textbf{(detta känns faktist rimligt på det är svårare att accelerera en tyngre massa men också svårare att stoppa den. kanske nämn detta för impulssvaret också?)}
+
+\newpage
+Härnäst ska fjäderkonstanen variera mellan $370$, $1473$ och $3000$, vilket gäller då linan är utdragen $2$ m, $0.5$ m respektive $0.25$ m från mittpunkten. Figuren nedan visar hur stegsvaret beter sig vid dessa värden.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/stegsvar_variation_k}
+    \caption{Stegsvar med varierande fjäderkonstant}
+    \label{fig:stegsvar_variation_k}
+\end{figure}
+Vi ser direkt att $k$ påverkar nivåkonstanten och alltså hur långt ned personen kan åka ned med den kraft som appliceras. Som för impulssvaret tar en mindre fjäderkonstant längre tid att komma till ett plant läge. Vi kan också notera en liten övergång över det nya läget då $k=3000$.
+
+\textbf{extremt rimligt om man ser fjäderkonstanten som hur ''tight'' linan är spänd. nämn om det om detta faktiskt stämmer}
+\newpage
+Sist varierar vi dämpningskonstanten $c$ med att både halvera och dubblera den. Denna graf visas nedan.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/stegsvar_variation_c}
+    \caption{Stegsvar med varierande dämpningskonstant}
+    \label{fig:stegsvar_variation_c}
+\end{figure}
+Likt impulssvaret så leder en hög dämpningskonstant till en kraftigare dämpning. Intressant nog så kommer stegsvaret för de lägre dämpningskonstanerna snabbare till det nya läget än den höga konstanten. 
+
 \newpage
 \subsection{Stabilitet}
-\textbf{Ska inte det här komma tidigare i rapporten????!?}
+För att bestämma systemets frekvensfunktion måste impulssvaret vara fouriertransformerbart vilket kräver att systemet är stabilt. Ett stabilt system är ett system där begränsade insignaler alltid ger begränsade utsignaler. \textit{Om detta inte gäller (dvs att systemet är instabilt) innebär det att vid vissa insignalers som inte är oändligt stora får man en oändligt stor utsignal. Därför är det viktigt att vårt system är stabilt.} \textbf{Denna text behöver inte vara här.}
 
-\textbf{Det har inte behövts innan. Först var de tänkt att vi skulle göra det under ''implussvaret'' för det är då vi vet att systemet är stabilt. Vi behöver att system är stabilt för att kunna ta fram fouriertransformen (frekvensfunktionen). NÄMN DETTA TYP DE FÖRSTA DU GÖR I DETTA KAPITEL}
-
-Ett stabilt system är ett system där begränsade insignaler alltid ger begränsade utsignaler. Gäller detta inte (dvs att systemet är instabilt) innebär det att vid vissa insignalers som inte är oändligt stora får man en oändligt stor utsignal. I lindansarens fall skulle detta innebära att det vid någon frekvens (\textbf{finns bättre ord här, möjligt att impuls ger oändlig output?}) skulle uppstå resonans så att höjdavvikelsen hela tiden ökade (mot oändligheten). Om lindansaren råkade gunga vid just den frekvensen skulle sådan fart nås att linan skulle brista och lindansaren slungas av och troligen skada sig illa. Därför är det viktigt att vårt system är stabilt.
-
-Ett instabilt system där det endast några få begränsade insignaler resulterar i obegränsade utsignaler kallas för marginellt stabilt. Om dessa insignaler är sådana som "aldrig" inträffar eller om man kan kompensera för dem så att de inte kan inträffa vore även ett marginellt stabilt system okej för lindansaren.
-
-För att bestämma huruvida ett system är stabilt eller ej finns olika tillvägagångssätt. Ett sätt att bestämma detta är att titta på impulssvaret. Om impulssvaret är absolutintegrerbart så är systemet stabilt (\textbf{sats 3.42, måste detta visas/alt refereras till från boken? EHh du kan hänvisa till boken fast jag tar allt vi säger som typ fakta/underförstådda saker. Behöver vi ens ta upp det om vi ändå bara använder pol/-nollställediagrammet? Eller står det nånstans att man måste visa abs.integ.barhet? Nej egentligen inte, men jag tycker de visar på att vi förstår vad stabilitet betyder och att det finns flera sätt att visa det på}). Att impulssvaret är absolutintegrerbart innebär att:
+För att bestämma om ett system är stabilt eller inte finns olika tillvägagångssätt. Ett sätt att bestämma detta är att titta på impulssvaret. Om impulssvaret är absolutintegrerbart så är systemet stabilt. Att impulssvaret är absolutintegrerbart innebär att:
 $$\int\limits_{-\infty}^{\infty}\big|h(t)\big|\,dt < \infty$$
-Ett annat sätt att bestämma om impulssvaret är stabilt är att titta på systemfunktionen och pol-/nollställena. Denna metod kan härledas från föregående metod (\textbf{Alltså sats 3.42}). Då gäller att ett kausalt LTI-system är stabilt om det har fler poler än nollställen och att samtliga poler befinner sig till vänster om imaginäraxeln ($j\omega$)(dvs att konvergensområdet innesluter imaginäraxeln). Som visats i 2.2 har vårt system fler poler än nollställen, och som kan ses i 2.2.1 och mer tydligt i Figur 4, 5 och 6 befinner sig samtliga poler alltid till vänster om imaginäraxeln. Alltså är vårt system stabilt. (\textbf{Givet att m!=0, är det nåt som ska nämnas någonstans överhuvudtaget elr är det ett trivial antagande? För att vårt system ska vara stabilt så krävs att  $m,k,c > 0$. Detta är uppenbart för att det är ett fysikaliskt och realiserbart system. Du kan nämna de kort om du vill})
+\textbf{Det du säger härnäst stämmer inte. Antal poler/nollställen bestämmer INTE stabilitet. Det ända som gäller är att $j\omega$-axeln ska ligga i konvergensområdet. Om system är stabilt så gäller att \#poler $\ge$ \#nollställen men INTE tvärtom! \href{https://www.cvl.isy.liu.se/education/undergraduate/TSKS06/foerelaesningar/Fo9-11.AnteckningsSidor.TSKS06.2016.pdf}{LÄNK PDF Sida 15 - notera enkelpilen}}.
 
-(\textbf{Notes sen innan skrivandet av 2.6})
 
-Var är stabilitet? (kanske mer viktigt: vad betyder stabilititet? im 12 btw)
-
-Begränsasd insignal ger... begränsad utsignal
-
-Absolutintegrerbart impulssvar....
-
-jw-axeln i konvergensomrpdet....
-
-vad betyder detta för vårat fysikaliska system? är det rimligt?
-(detta är uppenbart men det drar ut vår rapport med 1-2 (du menar 7-18) rader, worth!)
-
+Ett annat sätt att bestämma om impulssvaret är stabilt är att titta på systemfunktionen och pol-/nollställena. Denna metod kan härledas från föregående metod (\textbf{Alltså sats 3.42}). Då gäller att ett kausalt LTI-system är stabilt om det har fler poler än nollställen och att samtliga poler befinner sig till vänster om imaginäraxeln ($j\omega$)(dvs att konvergensområdet innesluter imaginäraxeln). Som visats i 2.2 har vårt system fler poler än nollställen, och som kan ses i 2.2.1 och mer tydligt i Figur 4, 5 och 6 befinner sig samtliga poler alltid till vänster om imaginäraxeln. Alltså är vårt system stabilt, vilket är rimligt eftersom det är ett realiserbart dämpningssystem.
 
 \subsection{Frekvensfunktion}
+För att se hur vårt system påverkar olika frekvenser kommer vi betrakta systemets frekvenskfunktion $H(\omega)$.
+Frekvensfunktionen är Fouriertransformen av impulssvaret $h(t)$. För att Fouriertransformen ska existera krävs att systemet är stabilt vilket visades i föregående kapitel. Vidare är Fouriertransformen ett specialfall av Laplacetransformen där variablen $s = j\omega$. Frekvensfunktionen har alltså bara den reella vinkelfrekvensen $\omega$ som argument. Med insättning av $s = j\omega$ i systemfunktionen $H(s)$ fås: 
+
 $$H(\omega)=H(s)\bigg\rvert_{s=j\omega}=\dfrac{1}{m(j\omega)^2+cj\omega+k}$$
 
-\subsection{Amplitud- och faskaraktäristik}
+\newpage
+\subsection{Amplitudkaraktäristik}
+Vi kommer nu titta hur systemet påverker amplituden av utsignalen beroende på frekvensen av insignaler. Amplitudkaraktäristiken är absolutbelopet av frekvensfunktionen och visar hur systemet dämpar och förstärker vissa signaler. 
+$$\big|H(\omega)\big|=\dfrac{1}{\big|\,m(j\omega)^2+cj\omega+k\,\big|}=\dfrac{1}{\sqrt{\big(k-m\,\omega^2\big)^2+\big(c\,\omega\big)^2}}$$
+Det allra första som kommer studeras vad som händer med amplituden för vår standardparameteruppsättning, alltså då $m=75$, $k=1473$ och $c=700$. Detta visas i figuren nedan.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik}
+    \caption{Amplitudkaraktäristik med standardparameteruppsättning}
+    \label{fig:amplitudkaraktaristik}
+\end{figure}
 
 
-\subsection{Utsignal}
+
+\subsection{Faskaraktäristik}
+Hur insignalens fasläge påverkas vid olika frekvenser kallas för systemets faskaraktäristik och beskrivs enligt:
+$$arg\big\{H(w)\big\}=\arg\big\{1\big\}-\arg\big\{k-m\omega^2+jc\,\omega\big\}$$
+$$=\begin{cases}
+-\arctan\bigg(\dfrac{c\omega}{k-m\omega^2}\bigg), & \text{om } k-m\omega^2 > 0  \\\\
+-\arctan\bigg(\dfrac{c\omega}{k-m\omega^2}\bigg)+\pi, & \text{om } k-m\omega^2 < 0 \\\\ 
+-\dfrac{\pi}{2}, & \text{om } k-m\omega^2 = 0 
+\end{cases}$$
+
+\textbf{Notes:}
+Amp.kar = hur sys påverkar insignalens amplitud vid olika frekvenser
+Fas.kar  = systemets påverkan på insignalens fasläge
+
+\subsection{Stationära sinussignaler}
+analysera två stationära sinussignaler med med, för just ert system, väl valda/motiverade och intressanta frekvenser.
+
+Mina förslag: resonans och en vanligt gångtakt hos en lindansare (vi får pröva och se på videos). Alt. (resonans + hög frek + låg frek)
+
+\subsubsection{Resonans}
+\subsubsection{Gångtakt}
 
 \subsection{SAKER SOM SKA KOLLAS DÅ ALLT ÄR KLART}
 \begin{itemize}
+    \item SKRIV IMPULSSVARET ISTÄLLET FÖR BARA $h(t)$ I TEXT1!!!!!!!!
     \item Vi blandar tex ''3'' och ''tre'' lite överallt. Använd en av dom (helst den som är korrekt http://dinsvenska.se/datum-tid-och-rakneord/ska-man-skriva-tal-med-siffror-eller-bokstaver/)
     \item Kolla ekvationerna, framför stora snedsträck används ibland ''='' och ibland ''$\Longleftrightarrow$''. Tror att vissa av dessa är fel.
     \item Ska vi använda dubbel- eller enkelpilar? 
