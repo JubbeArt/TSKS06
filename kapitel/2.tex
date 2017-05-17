@@ -1,9 +1,6 @@
-I förra kapitlet togs en differentialekvation fram som beskriver vårt system som en relation mellan insignalen och utsignalen. Utifrån denna differentialekvation kan nu olika systemegenskaper tas fram som gör det möjligt att analysera systemet. Systemet kommer regera olika beroende på systemparametrarna, exempelvis kommer linan svänga olika beroende på vikten av personen på linan. 
+I förra kapitlet togs en differentialekvation fram som beskriver vårt system som en relation mellan insignalen och utsignalen. Utifrån denna differentialekvation kan nu olika systemegenskaper tas fram som gör det möjligt att analysera systemet. Vi kommer få olika slags system med olika egensakper beroende på vilka  systemparametrar som väljs. Systemparametrarna i vårt fall är massan $m$, fjäderkonstanten $k$ och dämpningskonstanten $c$. Exempelvis kommer linan svänga olika beroende på vikten av personen på linan. 
 
-Systemanalysen kommer titta närmare på följande funktioner: systemfunktionen, impulssvaret, stegsvaret, rampsvaret, frekvensfunktionen samt amplitud- och faskaraktäristiken.
-Vissa av dessa funktioner tas fram med hjälp av olika transformer som existerar i frekvensdomänen vilket kommer diskuteras i nästa kapitel.
-
-\textbf{(ny sida här för att få figuren på nästa sida att komma på rätt ställe, kanske går att fixa senare)(lägg in en passande bild istället?)}
+Systemanalysen kommer titta närmare på följande funktioner: systemfunktionen, impulssvaret, stegsvaret, frekvensfunktionen samt amplitud- och faskaraktäristiken. Vissa av dessa är funktioner som existerar i tidsdomänen och andra i frekvensdomänen. Eftersom det är grundläggande att förstå hur dessa rum förhåller sig till varandra kommer detta diskuteras kort i nästa kapitel.
 
 \newpage
 \subsection{Frekvensdomänen}
@@ -22,7 +19,7 @@ För systemanalysen kommer olika transformer som överför funktioner från tids
 Laplacetransformen är ett vanligt verktyg för att lösa differentialekvationer. För att ta sig tillbaka till tidsdomänen från frekvensdomänen kan inverstransformer appliceras.
 
 \subsection{Systemfunktion}
-Systemfunktionen, $H(s)$, beskriver förhållandet mellan utsignalen och insignalen i frekvensdomänen. Detta betyder att man kan räkna ut en utsignal om man vet insignalen i frekvensdomänen och systemfunktionen. 
+Systemfunktionen $H(s)$ beskriver förhållandet mellan utsignalen och insignalen i frekvensdomänen. Detta betyder att man kan räkna ut en utsignal om man vet insignalen i frekvensdomänen och systemfunktionen. 
 Detta går också att göra i tidsdomänen med faltning men det är oftast enklare att utföra beräkningen i frekvensdomänen.
 
 För att beräkna systemfunktionen kommer hela differentialekvationen för systemet att Laplacetransformeras till frekvensdomänen. Det finns då två versioner av Laplacetransformen som kan användas: den enkelsidiga och den dubbelsidiga.
@@ -134,7 +131,7 @@ Sist har vi dämpningskonstanten $c$ som är svår att bestämma. Denna kan best
 $$\frac{c^2}{4m} > k $$
 Löser vi ut $c$ och stoppar in värdena från innan får vi:
 $$c>\sqrt{4km}=\sqrt{4\cdot 1473\cdot 75} \approx 665$$
-Vi väljer att $c=700$ kg/s för att skapa heltalsrötter i andra ekvationer. (\textbf{dummaste motiveringen egentligen..., den skapar inte ens hela rötter bara approximativa löl. HITTA EN BÄTTRE MOTVERING}).
+Vi väljer att $c=700$ kg/s för att skapa trevliga värden när vi utför beräkningar på systemet. 
 
 Standardparameteruppsättningen sammanställs då som:
 
@@ -146,9 +143,7 @@ c&=700 \text{ kg/s}
 \end{aligned}
 \end{cases}$
 
-(kanske försöka koppla variationen till verkligheten, massa = lättare/tyngre person. fjäder = lättare spänd lina(?). dämpningskonstant = annat material på lina (också ???).
-nämn standardvariation här eller senare?)
-
+\newpage
 \subsubsection{Variation av impulssvaret}
 Vi ska nu undersöka impulssvaret grafiskt för de parametrar vi har valt och vad som händer om dessa ändras. Först är vi intresserad av hur impulssvaret beter sig med våra standardparameteruppsättning alltså att $m = 75$ kg, $k=1473$ N/m och $c=700$ kg/s. Detta visas i figuren nedan.
 
@@ -168,20 +163,21 @@ Följande figur illustrerar vad som händer då massan $m$ varierar. För att l�
     \caption{Impulssvar med varierande massa}
     \label{fig:impulssvar_variation_m}
 \end{figure}
-Vi ser att tyngre personer får lägre amplitud än lättare personer. (\textbf{Dock så ... Fixa detta})
+Vi ser att lättare personer når en högre amlitud och gör det snabbare än tyngre personer. Detta är rimligt eftersom tröghet gör att tyngre personer accelereras mindre av en lika stor kraft än lättare personer. Däremot innebär också trögheten att tyngre personer tar kräver mer motstånd för att stanna (då deras rörelsemängd blir högre. \textbf{Måste egentligen räkna här för att se om det stämmer. Om samma kraft påverkar en tyngre och en lättare massa är jag osäker på förhållandet mellan deras rörelsemängder. Vid samma hastighet har fetton större rörelsemängd. Men tröghet/massa i sig talar om hur mycket något "motstår" kraftpåverkan så bara det räcker för att det ska vara svårare att stoppa fetton  }).
 
 \newpage
-För att få rimliga värden på $k$ betraktas linans utdragslängd $y_0$ från mittpunkten i olika lägen. Vi studerar utdragslängerna $2$ m och $0.25$ m. Detta ger fjäderkonstanen $370$ N/m respektive $3000$ N/m. Figuren nedan visar impulssvaret för de olika fjäderkonstanterna. (\textbf{vad betyder detta i vårt system?})
+För att få rimliga värden på $k$ betraktas linans utdragslängd $y_0$ från mittpunkten i olika lägen. Vi studerar utdragslängerna $2$ m och $0.25$ m. Detta ger fjäderkonstanen $370$ N/m respektive $3000$ N/m. I verkligheten kan man få liknande effekt genom att spänna linan olika hårt eller flytta ändpunkterna närmre eller längre bort från varandra. Figuren nedan visar impulssvaret för de olika fjäderkonstanterna.
 \begin{figure}[H] 
     \centering
     \includegraphics[scale=0.9]{bilder/impulssvar_variation_k}
     \caption{Impulssvar med varierande fjäderkonstant}
     \label{fig:impulssvar_variation_k}
 \end{figure}
-Här ser vi tydligt att lägre fjäderkonstant gör att massan tar mycket längre tid att ta sig tillbaka till viloläget. (\textbf{I verkligheten .... Fixa detta})
+Här ser vi tydligt att en lägre fjäderkonstant gör att massan tar mycket längre tid att ta sig tillbaka till viloläget. Tänker man det som hur hårt linan är spänd känns det rimligt då hårdare spänd lina snabbare tar sig tillbaka till utgångsläget. 
 
 \newpage
-Nedan undersöks vad som händer då $c$ ändras. I figuren nedan visas impulssvaret då dämpningskonstanten halveras samt fördubblas.
+Nedan undersöks vad som händer då $c$ ändras. I verkligheten skulle liknande effekt fås om man ändrar materialet på linan, till exempel från ett rep till en vajer.
+I figuren nedan visas impulssvaret då dämpningskonstanten halveras samt fördubblas.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{bilder/impulssvar_variation_c}
@@ -196,8 +192,7 @@ En annan insignal vi ska studera är enhetssteget $u(t)$. Detta är en plötslig
 $$u(t)=\begin{cases} 1, & \text{om } t \ge 0 \\ 0, & \text{om } t < 0\end{cases}$$
 När ett system matas med ett enhetssteg får man stegsvaret $g(t)$ som utsignal. Detta kan i vårt system representeras av att en vikt kastas till personen på linan. Eftersom vårt system är linjärt kan denna utsignal beräknas genom att falta enhetssteget med impulssvaret som har beräknats innan. Denna uträkning kan sedan förenklas till en integral över bara impulssvaret enligt:
 $$g(t)=(u*h)(t)=\int\limits_{-\infty}^{\infty}h(\tau)\,u(t-\tau)\,d\tau=\int\limits_{-\infty}^{t}h(\tau)\,d\tau$$
-Våra tre typer av generella system ger upphov till tre olika impulssvar och kommer därför även ge upphov till tre olika stegsvar. För att beräkna dessa tre stegsvar behåller vi standardparameteruppsättningen som valdes då impulsvaren beräknades. Eftersom alla impulssvar har en faktor av enhetsteget ges inget bidrag till faltningsintegralen då $t < 0$. Nedan beräknas vad som händer då $t \ge 0$ (\textbf{EHHH TYP FAST TYP INTE, tycker det är oklart då vi säger ''ges inget bidrag'', jag menar det vi vill säga att integralen blir noll. Då folk säger ''ger inget bidrag'' har man oftast bidrag från någon annan term, annars finns det ju ingen mening att säga så}).
-
+Våra tre typer av generella system ger upphov till tre olika impulssvar och kommer därför även ge upphov till tre olika stegsvar. För att förenkla beräkningen av dessa tre stegsvar behåller vi variabelbytena som valdes då impulsvaren beräknades. Eftersom alla impulssvar har en faktor av enhetsteget ges inget bidrag till faltningsintegralen då $t < 0$. Nedan beräknas vad som händer då $t \ge 0$.
 \begin{itemize}
     \item Vid två skilda reella poler kan vi direkt integrera exponentialfunktionerna.
     $$\begin{aligned}
@@ -223,7 +218,7 @@ Våra tre typer av generella system ger upphov till tre olika impulssvar och kom
 \end{itemize}
 Eftersom dessa tre stegsvar bara gäller då $t\ge 0$ kommer de multipliceras med enhetssteget för ett fullständigt stegsvar enligt:
 $$g(t)=g_1(t)\cdot u(t)$$
-Detta ger att stegsvaren för reella poler, dubbelpol respektive de komplexa polerna, blir:
+Detta ger att stegsvaren för reella poler, dubbelpol respektive komplexa polerna blir:
 
 $\begin{cases}
 g(t)=\dfrac{(\alpha-\omega_0)e^{-(\alpha+\omega_0)t}-(\alpha+\omega_0)e^{-(\alpha-\omega_0)t}+2\omega_0}{2m\omega_0(\alpha^2-\omega_0^2)}\,u(t) \\\\
@@ -231,7 +226,6 @@ g(t)=\dfrac{1-e^{-\alpha t}(\alpha t+1)}{m\alpha^2}\,u(t) \\\\
 g(t)=\dfrac{\omega_0-e^{-\alpha t}(\alpha\sin(\omega_0 t)+\omega_0\cos(\omega_0 t))}{m\omega_0(\alpha^2+\omega_0^2)}\,u(t)
 \end{cases}$
 
-\textbf{Förslag för förtydligande: Döpa om alla $h(t)$ till $h_r(t)$, $h_d(t)$  och $h_k(t)$ för reella, dubbel och komplex, alt. $h_1(t), h_2(t), h_3(t)$}
 
 \newpage
 \subsubsection{Variation av stegsvaret}
@@ -252,10 +246,8 @@ Nu vill vi kolla vad som händer då massan förändras. Igen så används masso
     \caption{Stegsvar med varierande massa}
     \label{fig:stegsvar_variation_m}
 \end{figure}
-Här ser inte så stor skilnad på 3 olika massorna, de närmar sig de nya höjdläget vid ungefär samma tidpunkt. Den tyngre massan tar längre tid på sig att börja röra sig men kommer också längre ned än de andra två och skapar också oscillation.
+Här ser inte så stor skillnad på de 3 olika massorna, de närmar sig de nya höjdläget vid ungefär samma tidpunkt. Den tyngre massan tar längre tid på sig att börja röra sig men kommer också längre ned än de andra två och skapar också oscillation.
 Vi kan också notera att massan inte påverkar nivåkonstanten då dessa går mot samma jämviktsläge.
-
-\textbf{(detta känns faktist rimligt på det är svårare att accelerera en tyngre massa men också svårare att stoppa den. kanske nämn detta för impulssvaret också?)}
 
 \newpage
 Härnäst ska fjäderkonstanen variera mellan $370$, $1473$ och $3000$, vilket gäller då linan är utdragen $2$ m, $0.5$ m respektive $0.25$ m från mittpunkten. Figuren nedan visar hur stegsvaret beter sig vid dessa värden.
@@ -280,60 +272,109 @@ Likt impulssvaret så leder en hög dämpningskonstant till en kraftigare dämpn
 
 \newpage
 \subsection{Stabilitet}
-För att bestämma systemets frekvensfunktion måste impulssvaret vara fouriertransformerbart vilket kräver att systemet är stabilt. Ett stabilt system är ett system där begränsade insignaler alltid ger begränsade utsignaler. \textit{Om detta inte gäller (dvs att systemet är instabilt) innebär det att vid vissa insignalers som inte är oändligt stora får man en oändligt stor utsignal. Därför är det viktigt att vårt system är stabilt.} \textbf{Denna text behöver inte vara här.}
-
-För att bestämma om ett system är stabilt eller inte finns olika tillvägagångssätt. Ett sätt att bestämma detta är att titta på impulssvaret. Om impulssvaret är absolutintegrerbart så är systemet stabilt. Att impulssvaret är absolutintegrerbart innebär att:
+För att bestämma systemets frekvensfunktion måste impulssvaret vara fouriertransformerbart vilket kräver att systemet är stabilt. Ett stabilt system är ett system där begränsade insignaler alltid ger begränsade utsignaler. För att bestämma om ett system är stabilt eller inte finns olika tillvägagångssätt. Ett sätt att bestämma detta är att titta på impulssvaret. Om impulssvaret är absolutintegrerbart så är systemet stabilt. Att impulssvaret är absolutintegrerbart innebär att:
 $$\int\limits_{-\infty}^{\infty}\big|h(t)\big|\,dt < \infty$$
-\textbf{Det du säger härnäst stämmer inte. Antal poler/nollställen bestämmer INTE stabilitet. Det ända som gäller är att $j\omega$-axeln ska ligga i konvergensområdet. Om system är stabilt så gäller att \#poler $\ge$ \#nollställen men INTE tvärtom! \href{https://www.cvl.isy.liu.se/education/undergraduate/TSKS06/foerelaesningar/Fo9-11.AnteckningsSidor.TSKS06.2016.pdf}{LÄNK PDF Sida 15 - notera enkelpilen}}.
-
-
-Ett annat sätt att bestämma om impulssvaret är stabilt är att titta på systemfunktionen och pol-/nollställena. Denna metod kan härledas från föregående metod (\textbf{Alltså sats 3.42}). Då gäller att ett kausalt LTI-system är stabilt om det har fler poler än nollställen och att samtliga poler befinner sig till vänster om imaginäraxeln ($j\omega$)(dvs att konvergensområdet innesluter imaginäraxeln). Som visats i 2.2 har vårt system fler poler än nollställen, och som kan ses i 2.2.1 och mer tydligt i Figur 4, 5 och 6 befinner sig samtliga poler alltid till vänster om imaginäraxeln. Alltså är vårt system stabilt, vilket är rimligt eftersom det är ett realiserbart dämpningssystem.
-
+Ett annat sätt att bestämma om systemet är stabilt är att kolla på konvergensområdet för systemfunktionen. Om den imaginära axeln alltså $j\omega$-axeln är i konvergensområdet så är systmet stabilt.
+Detta gäller alltid för vårt system som kan ses i pol-nollställediagramen för systemfunktionen i kapitel $2.2.1$. Egentligen krävs också att $m,k,c>0$ men detta har antagits för att modellen ens ska ge mening.
 \subsection{Frekvensfunktion}
-För att se hur vårt system påverkar olika frekvenser kommer vi betrakta systemets frekvenskfunktion $H(\omega)$.
+För att se hur vårt system påverkar signaler av olika frekvenser kommer vi betrakta systemets frekvenskfunktion $H(\omega)$.
 Frekvensfunktionen är Fouriertransformen av impulssvaret $h(t)$. För att Fouriertransformen ska existera krävs att systemet är stabilt vilket visades i föregående kapitel. Vidare är Fouriertransformen ett specialfall av Laplacetransformen där variablen $s = j\omega$. Frekvensfunktionen har alltså bara den reella vinkelfrekvensen $\omega$ som argument. Med insättning av $s = j\omega$ i systemfunktionen $H(s)$ fås: 
 
 $$H(\omega)=H(s)\bigg\rvert_{s=j\omega}=\dfrac{1}{m(j\omega)^2+cj\omega+k}$$
 
 \newpage
 \subsection{Amplitudkaraktäristik}
-Vi kommer nu titta hur systemet påverker amplituden av utsignalen beroende på frekvensen av insignaler. Amplitudkaraktäristiken är absolutbelopet av frekvensfunktionen och visar hur systemet dämpar och förstärker vissa signaler. 
-$$\big|H(\omega)\big|=\dfrac{1}{\big|\,m(j\omega)^2+cj\omega+k\,\big|}=\dfrac{1}{\sqrt{\big(k-m\,\omega^2\big)^2+\big(c\,\omega\big)^2}}$$
-Det allra första som kommer studeras vad som händer med amplituden för vår standardparameteruppsättning, alltså då $m=75$, $k=1473$ och $c=700$. Detta visas i figuren nedan.
+Vi kommer nu titta hur systemet påverker amplituden av utsignalen beroende på frekvensen av insignalen. Amplitudkaraktäristiken är absolutbelopet av frekvensfunktionen och visar hur systemet dämpar och förstärker vissa signaler. 
+$$\big|H(\omega)\big|=\dfrac{1}{\Big|\,m(j\omega)^2+cj\omega+k\,\Big|}=\dfrac{1}{\sqrt{\big(k-m\,\omega^2\big)^2+\big(c\,\omega\big)^2}}$$
+Det allra första som kommer studeras vad som händer med amplituder för vår standardparameteruppsättning, alltså då $m=75$ kg, $k=1473$ N/m och $c=700$ kg/s. Detta visas i figuren nedan.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik}
     \caption{Amplitudkaraktäristik med standardparameteruppsättning}
     \label{fig:amplitudkaraktaristik}
 \end{figure}
+Vi ser att systemet släpper igenom låga frekvenser och dämpar höga frekvenser. Detta system beter sig som ett lågpassfilter.
+Då vi har olika enheter på insignal och utsignal, en kraft respektive en längd, är det svårt att tolka hur mycket som faktist förstärks eller dämpas vid en viss vinkelfrekvens (\textbf{detta behvöer inte nämnas}). Vi kan utifrån grafen se att gränsvinkelfrekvensen är ungefär $2.5$ rad/s, alltså då:
+$$\big|H(\omega)\big|=\dfrac{max\Big\{\big|H(\omega)\big|\Big\}}{\sqrt{2}}\approx \frac{7}{\sqrt{2}} \approx 5$$
+\newpage
+\textbf{Ehhhh förslag: hoppa över de två första graferna och ta bara den med c. Anledning? Det finns inte så mycket att prata om som inte redan sagts samt sidobrist}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik_variation_m}
+    \caption{Amplitudkaraktäristik med varierande massa}
+    \label{fig:amplitudkaraktaristik_variation_m}
+\end{figure}
 
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik_variation_k}
+    \caption{Amplitudkaraktäristik med varierande fjäderkonstant}
+    \label{fig:amplitudkaraktaristik_variation_k}
+\end{figure}
 
+\newpage
+Härnäst kommer vi hur se hur amplitudkaraktäristiken beter sig när dämpningskonstanten ändras. Igen väljer vi att halvera och dubblera konstanten vilket visas i figuren nedan.  
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik_variation_c}
+    \caption{Amplitudkaraktäristik med varierande dämpningskonstant}
+    \label{fig:amplitudkaraktaristik_variation_c}
+\end{figure}
+Vi ser generellt att en högre dämpningskonstant dämpar mer för alla frekvenser. Vid en lägre dämpningskonstant bildas komplexkonjugerade poler i frekvensdomänen vilker betyder att toppen av amplitudkaraktäristiken flyttas åt höger. I det fallet får vi en nollskild resonansfrekvens, vilket i grafen kan avläsas vara ungefär $3$ rad/s. 
+
+\newpage
 \subsection{Faskaraktäristik}
-Hur insignalens fasläge påverkas vid olika frekvenser kallas för systemets faskaraktäristik och beskrivs enligt:
+Faskaraktäristiken beskriver hur mycket systemet förskjuter en signal i fas beroende på frekvensen. Denna kan tas fram genom att ta argumentet för frekvensfunktionen enligt:
 $$arg\big\{H(w)\big\}=\arg\big\{1\big\}-\arg\big\{k-m\omega^2+jc\,\omega\big\}$$
 $$=\begin{cases}
--\arctan\bigg(\dfrac{c\omega}{k-m\omega^2}\bigg), & \text{om } k-m\omega^2 > 0  \\\\
--\arctan\bigg(\dfrac{c\omega}{k-m\omega^2}\bigg)+\pi, & \text{om } k-m\omega^2 < 0 \\\\ 
+-\arctan\bigg(\dfrac{c\,\omega}{k-m\omega^2}\bigg), & \text{om } k-m\omega^2 > 0  \\\\
+-\arctan\bigg(\dfrac{c\,\omega}{k-m\omega^2}\bigg)-\pi, & \text{om } k-m\omega^2 < 0 \\\\ 
 -\dfrac{\pi}{2}, & \text{om } k-m\omega^2 = 0 
 \end{cases}$$
-
-\textbf{Notes:}
-Amp.kar = hur sys påverkar insignalens amplitud vid olika frekvenser
-Fas.kar  = systemets påverkan på insignalens fasläge
-
+I grafen nedan visas faskaraktäristiken för vår standardparameteruppsättning.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.75]{bilder/faskaraktaristik}
+    \caption{Faskaraktäristik med standardparameteruppsättning}
+    \label{fig:faskaraktaristik}
+\end{figure}
+Vi ser att vårt system fastförskjuter signaler med högre frekvenser mer än lägre. Man kan alltså säga att systemet reagerar bättre på långsamma förändringar än snabba.
+Argumentet kommer i detta fall gå mot $-\pi$ då frekvensen går mot oändligheten. Detta kan bevisas då för det för stora $\omega$  gäller att:
+$$\lim_{\omega\to\infty}-\arctan\bigg(\dfrac{c\,\omega}{k-m\omega^2}\bigg)-\pi=
+\lim_{\omega\to\infty}-\arctan\Bigg(\dfrac{1}{\omega}\cdot\frac{c}{\frac{k}{\omega^2}-m}\Bigg)-\pi=-\arctan(0)-\pi=-\pi$$
+Då faskaratäristiken inte är intressant för vårt system kommer vi inte analysera den något yttligare.
+\newpage
 \subsection{Stationära sinussignaler}
-analysera två stationära sinussignaler med med, för just ert system, väl valda/motiverade och intressanta frekvenser.
+När ett LTI-system matas med en godtycklig sinusfunktion som insignal, till exempel följande insignal $x(t)$:
+$$x(t)=A\sin(\omega_0t)$$
+får vi en utsignal $y(t)$ som kan beräknas med hjälp av frekvensfunktionen $H(\omega)$ enligt:
+$$y(t)=A\,\big|H(\omega_0)\big|\sin\big(\omega_0t+\arg\big\{H(\omega_0)\big\}\big)$$
+Man får alltså att utsignalen är en amplitudskalad för fastförskjuten verision av insignalen.
+Detta gör det väldigt lätt att beräkna utsignalen om insignalen är en sinusfunktion och frekvensfunktion är bestämd. Vi ska nu se hur vårt system reagerar på olika typer av sinusfunktioner med olika frekvenser.
+
+
+--------------------------------------------------------------------
+
+analysera två stationära sinussignaler  med, för just ert system, väl valda/motiverade och intressanta frekvenser.
 
 Mina förslag: resonans och en vanligt gångtakt hos en lindansare (vi får pröva och se på videos). Alt. (resonans + hög frek + låg frek)
+\textbf{Ev. borde vil kolla på stegsvar med skalad input typ 10 eller 100 N in. 1 N är ju typ ingenting}
 
+Fråga Lasse?
 \subsubsection{Resonans}
+oh no vårt system har ingen responansfrekvens för att det är att lågpassfilter, man kan ändra detta genom att ändra systemparamterarna med det känns fel.
+
+\textbf{Njaeoea, g  ul i fig 16 och blå i fig 18 har resonanser och är lågpass. Vi saknar resonans pga sys.parametrarna, men inte för att det är ett LP}
 \subsubsection{Gångtakt}
 
+\newpage
 \subsection{SAKER SOM SKA KOLLAS DÅ ALLT ÄR KLART}
 \begin{itemize}
     \item SKRIV IMPULSSVARET ISTÄLLET FÖR BARA $h(t)$ I TEXT1!!!!!!!!
     \item Vi blandar tex ''3'' och ''tre'' lite överallt. Använd en av dom (helst den som är korrekt http://dinsvenska.se/datum-tid-och-rakneord/ska-man-skriva-tal-med-siffror-eller-bokstaver/)
+    \item Förslag för förtydligande: Döpa om alla $h(t)$ till $h_r(t)$, $h_d(t)$  och $h_k(t)$ för reella, dubbel och komplex, alt. $h_1(t), h_2(t), h_3(t)$
     \item Kolla ekvationerna, framför stora snedsträck används ibland ''='' och ibland ''$\Longleftrightarrow$''. Tror att vissa av dessa är fel.
     \item Ska vi använda dubbel- eller enkelpilar? 
     \item Fixa storleken på alla formler i rapporten
