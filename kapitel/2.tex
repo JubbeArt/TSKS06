@@ -97,7 +97,7 @@ Enhetsimpulsen är noll för alla värden $t\ne 0$. Vid $t = 0$ är den oändlig
 Impulssvaret $h(t)$ är utsignalen då ett system tar emot en enhetsimpuls som insignal. Denna kan räknas ut genom att inverstransformera systemfunktionen $H(s)$. Vi kommer återigen att använda tabeller för dessa beräkningar då integralerna är jobbiga att räkna ut. Man får istället problemet att skriva om uttrycken så att de matchar något i tabellen. Då det finns tre uppsättningar av poler kommer implussvaret för dessa räknas ut separat.
 
 \begin{itemize}
-    \item Vid 2 skilda reella poler kan vi faktorisera rötterna i nämnarpolynomet och partialbråksuppdela för att hitta en lämplig inverstransform.
+    \item Vid två skilda reella poler kan vi faktorisera rötterna i nämnarpolynomet och partialbråksuppdela för att hitta en lämplig inverstransform.
     
     $$H(s)=\frac{1}{m} \cdot \frac{1}{s^2+\frac{cs}{m}+\frac{k}{m}}=\Bigg/ \,\alpha=\frac{c}{2m}\,\,,\,\,\, \omega_0=\sqrt{\bigg(\frac{c}{2m}\bigg)^2-\frac{k}{m}} \,\,\Bigg/$$
     $$=\frac{1}{m} \cdot \frac{1}{\big(s+\alpha-\omega_0\big)\big(s+\alpha+\omega_0\big)}  = \, \frac{1}{2m\omega_0} \Bigg(\frac{1}{s+\alpha-\omega_0}-\frac{1}{s+\alpha+\omega_0}\Bigg)$$
@@ -297,22 +297,25 @@ Vi ser att systemet släpper igenom låga frekvenser och dämpar höga frekvense
 Då vi har olika enheter på insignal och utsignal, en kraft respektive en längd, är det svårt att tolka hur mycket som faktist förstärks eller dämpas vid en viss vinkelfrekvens (\textbf{detta behvöer inte nämnas}). Vi kan utifrån grafen se att gränsvinkelfrekvensen är ungefär $2.5$ rad/s, alltså då:
 $$\big|H(\omega)\big|=\dfrac{max\Big\{\big|H(\omega)\big|\Big\}}{\sqrt{2}}\approx \frac{7}{\sqrt{2}} \approx 5$$
 \newpage
-\textbf{Ehhhh förslag: hoppa över de två första graferna och ta bara den med c. Anledning? Det finns inte så mycket att prata om som inte redan sagts samt sidobrist}
-
+\subsubsection{Variation av amplitudkaraktäristiken}
+Vi ska nu undersöka hur amplitudkaraktäristiken beter sig med olika parameteruppsättningar. Först kollar vi vad som händer då massan ändras.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik_variation_m}
     \caption{Amplitudkaraktäristik med varierande massa}
     \label{fig:amplitudkaraktaristik_variation_m}
 \end{figure}
+Vi ser att en tyngre massa leder en skarpare kurva. Vill man ha högre amplituder vid låga och normala frekvenser ska man ha en stor vikt. Detta verkar rimligt då en större person är svårare att accelerera men svänger mer då den får upp fart.
 
 \newpage
+Sedan prövas i figuren nedan vad som händer med amplitudkaraktäristiken då fjäderkonstanten ändras mellan låga och högra värden. 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.9]{bilder/amplitudkaraktaristik_variation_k}
     \caption{Amplitudkaraktäristik med varierande fjäderkonstant}
     \label{fig:amplitudkaraktaristik_variation_k}
 \end{figure}
+Här ser vi hur fjäderkonstanten har en direkt koppling till amplituden vid låga frekvenser. Ju lösare linan är spänd desto högre vill linan svänga. Detta jämnas ut vid cirka  $5$ rad/s då fjäderkonstanten inte längre verkar spela någon roll. Detta är på grund av lägesförändringen blir väldigt liten vid hög frekvens och fjädern motverkar ju läget.
 
 \newpage
 Härnäst kommer vi hur se hur amplitudkaraktäristiken beter sig när dämpningskonstanten ändras. Igen väljer vi att halvera och dubblera konstanten vilket visas i figuren nedan.  
@@ -327,13 +330,13 @@ Vi ser generellt att en högre dämpningskonstant dämpar mer för alla frekvens
 \newpage
 \subsection{Faskaraktäristik}
 Faskaraktäristiken beskriver hur mycket systemet förskjuter en signal i fas beroende på frekvensen. Denna kan tas fram genom att ta argumentet för frekvensfunktionen enligt:
-$$arg\big\{H(w)\big\}=\arg\big\{1\big\}-\arg\big\{k-m\omega^2+jc\,\omega\big\}$$
-$$=\begin{cases}
+\\$$\begin{aligned}arg\big\{H(w)\big\}=\arg\big\{1\big\}-\arg\big\{k-m\omega^2+jc\,\omega\big\}
+=\begin{cases}
 -\arctan\bigg(\dfrac{c\,\omega}{k-m\omega^2}\bigg), & \text{om } k-m\omega^2 > 0  \\\\
 -\arctan\bigg(\dfrac{c\,\omega}{k-m\omega^2}\bigg)-\pi, & \text{om } k-m\omega^2 < 0 \\\\ 
 -\dfrac{\pi}{2}, & \text{om } k-m\omega^2 = 0 
-\end{cases}$$
-I grafen nedan visas faskaraktäristiken för vår standardparameteruppsättning.
+\end{cases}\end{aligned}$$
+\\I grafen nedan visas faskaraktäristiken för vår standardparameteruppsättning.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.75]{bilder/faskaraktaristik}
@@ -351,23 +354,55 @@ När ett LTI-system matas med en godtycklig sinusfunktion som insignal, till exe
 $$x(t)=A\sin(\omega_0t)$$
 får vi en utsignal $y(t)$ som kan beräknas med hjälp av frekvensfunktionen $H(\omega)$ enligt:
 $$y(t)=A\,\big|H(\omega_0)\big|\sin\big(\omega_0t+\arg\big\{H(\omega_0)\big\}\big)$$
-Man får alltså att utsignalen är en amplitudskalad för fastförskjuten verision av insignalen.
+Man får alltså att utsignalen är en amplitudskalad och fastförskjuten verision av insignalen.
 Detta gör det väldigt lätt att beräkna utsignalen om insignalen är en sinusfunktion och frekvensfunktion är bestämd. Vi ska nu se hur vårt system reagerar på olika typer av sinusfunktioner med olika frekvenser.
 
-
---------------------------------------------------------------------
-
-analysera två stationära sinussignaler  med, för just ert system, väl valda/motiverade och intressanta frekvenser.
-
-Mina förslag: resonans och en vanligt gångtakt hos en lindansare (vi får pröva och se på videos). Alt. (resonans + hög frek + låg frek)
-\textbf{Ev. borde vil kolla på stegsvar med skalad input typ 10 eller 100 N in. 1 N är ju typ ingenting}
-
-Fråga Lasse?
-\subsubsection{Resonans}
-oh no vårt system har ingen responansfrekvens för att det är att lågpassfilter, man kan ändra detta genom att ändra systemparamterarna med det känns fel.
-
-\textbf{Njaeoea, g  ul i fig 16 och blå i fig 18 har resonanser och är lågpass. Vi saknar resonans pga sys.parametrarna, men inte för att det är ett LP}
 \subsubsection{Gångtakt}
+Den första frekvens som kommer analyseras är en som liknar takten som en riktig lindansare skulle gå i. Detta för att få en ungefärlig känsla över hur systemet svänger i ett verkligt scenario. Kraften en person påverkar linan med, utöver gravitationskraften, då denne går i jämn takt kan modelleras som en sinusvåg. När personen böjer sitt ben minskas tillfälligt kraften personer påverkar linan med och när personen sträcker ut sitt ben ökar kraften tillfälligt.
+
+Kraften personen påverkar linan med och vinkelfrekvensen måste apporoximeras. Kraften kan approximeras genom experiment då en person står på en våg och upprepat böjer på sina ben. Det visar sig att denna kraft är ungefär $200$ N. Vinkelfrekvensen kan också approximeras via experiment. Då vi prövade att gå i normaltakt fick vi en periodtid på cirka $1$ sekund. Genom vidare observationer av videoklipp av lindansare såg vi att detta stämde bra överrens med det vi kom fram till innan. Periodtiden kan användas för att bestämma vinkelfrekvensen enligt:
+$$\omega=2\pi f= \dfrac{2\pi}{T} \Longleftrightarrow \omega_0 = 2\pi$$
+Insignalen kan då skrivas som:
+$$x(t)=200\sin(2\pi t)$$
+Detta ger följande amplitudskalade och fasförskjutna utsignal:
+$$y(t)=200\,\big|H(2\pi)\big|\sin\big(2\pi t+\arg\big\{H(2\pi)\big\}\big)$$
+$$=\bigg/ \,\,\big|H(2\pi)\big|\approx 0.00022 \,,\,\,\, \arg\big\{H(2\pi)\big\}\approx -1.90  \,\bigg/$$
+$$\approx 0.044\sin(2\pi t - 1.90)$$
+
+\newpage
+Här nedan ses insignalen och utsignalen då personen går på linan. Notera att den blåa insignalen har enheten newton och röda utsignalen är i millimeter. 
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[scale=0.9]{bilder/sinusfunktion_gangtakt}
+    \caption{Insignal och utsignal för gångtakten. $x(t)$ mäts i N och $y(t)$ i mm}
+    \label{fig:sinusfunktion_gangtakt}
+\end{figure}
+(tolkning)
+
+\newpage
+\subsubsection{Löptakt}
+Det är vanligt att lindansare inte bara går utan även springer fram på linan. Därför betraktar vi även hur vårt system beter sig vid löptakt. Precis som för gången kan kraften personen påverkar linan med modellas som en sinusfunktion. Då man springer trycker man ifrån linan mer än då man går så amplitud kommer att vara något högre. En rimlig approximation på sinusfunktionens amplitud är 250 N. Dessutom kommer frekvensen att vara högre. Videoklipp där lindansare springer fram på linan visar att en vanlig takt är tre till fyra steg per sekund. Vi väljer att betrakta fallet då personen tar tre steg per sekund. Periodtiden blir då $\sfrac{1}{3}$ sekund.
+$$\omega_0 = \dfrac{2\pi}{T} = 6\pi$$
+
+Vilket ger den sinusformade insignalen:
+$$x(t) = 250\sin(6\pi t)$$
+
+Likt innan blir utsignalen amplitudskalad och fasförskjuten. Utsignalen blir:
+$$y(t)=250\,\big|H(6\pi)\big|\sin\big(6\pi t+\arg\big\{H(6\pi)\big\}\big)$$
+$$=\bigg/ \,\,\big|H(6\pi)\big|\approx 0.000035 \,,\,\,\, \arg\big\{H(6\pi)\big\}\approx -2.66  \,\bigg/$$
+$$\approx 0.00875\sin(6\pi t - 2.66)$$
+
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+     \includegraphics[scale=0.9]{bilder/sinusfunktion_loptakt}
+    \caption{Insignal och utsignal för löptakten. $x(t)$ mäts i N och $y(t)$ i mm}
+    \label{fig:sinusfunktion_loptakt}
+\end{figure}
+springer snabbt pga att skapa mindre svängningar.
 
 \newpage
 \subsection{SAKER SOM SKA KOLLAS DÅ ALLT ÄR KLART}
