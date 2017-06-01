@@ -12,7 +12,7 @@ for i=1:length(files)
 		
 		[pathstr, name, ext] = fileparts(files(i).name);
 		saveas(gcf, strcat(images_folder, name, '.png'));
+		close
 	end
 end
 
-close

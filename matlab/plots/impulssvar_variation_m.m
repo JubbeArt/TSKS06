@@ -6,21 +6,21 @@ m = 20;
 a = c/(2*m);
 w = sqrt((c/(2*m))^2-k/m);
 h2=1/(2*m*w)*(exp(-(a-w)*t)-exp(-(a+w)*t)).*u(t);
-plot(t, h2)
+plot(t, h2, 'r--')
 hold on
 
 m = 75;
 a = c/(2*m);
 w = sqrt((c/(2*m))^2-k/m);
 h1=1/(2*m*w)*(exp(-(a-w)*t)-exp(-(a+w)*t)).*u(t);
-plot(t, h1, '--')
+plot(t, h1, 'b')
 hold on
 
 m = 200;
 a = c/(2*m);
 w = sqrt(k/m-(c/(2*m))^2);
 h3 = 1/(m*w).*exp(-a*t).*sin(w*t).*u(t);
-plot(t, h3, ':')
+plot(t, h3, 'g:')
 
 xlabel('Tid [s]')
 ylabel('Amplitud [m]')

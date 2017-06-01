@@ -7,7 +7,7 @@ m=20;
 a = c/(2*m);
 w = sqrt((c/(2*m))^2-k/m);
 g1=1/(2*m*w*(a^2-w^2))*((a-w)*exp(-(a+w)*t)-(a+w)*exp(-(a-w)*t)+2*w).*u(t);
-plot(t, g1);
+plot(t, g1, 'r--');
 hold on
 
 m = 75;
@@ -15,7 +15,7 @@ a = c/(2*m);
 w = sqrt((c/(2*m))^2-k/m);
 
 g2=1/(2*m*w*(a^2-w^2))*((a-w)*exp(-(a+w)*t)-(a+w)*exp(-(a-w)*t)+2*w).*u(t);
-plot(t, g2, '--')
+plot(t, g2, 'b')
 hold on
 
 m=200;
@@ -23,7 +23,7 @@ a = c/(2*m);
 w = sqrt(k/m-(c/(2*m))^2);
 g3=(w-exp(-a*t).*(a*sin(w*t)+w*cos(w*t)) ) / (m*w*(a^2+w^2)) .*u(t);
 
-plot(t, g3, ':');
+plot(t, g3, 'g:');
 xlabel('Tid [s]')
 ylabel('Amplitud [m]')
 title('g(t)')
