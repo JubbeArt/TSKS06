@@ -1,0 +1,115 @@
+\documentclass[usenames,dvipsnames]{article}
+
+\usepackage[utf8]{inputenc} % Text encode
+\usepackage{graphicx} % Bilder
+\usepackage[dvipsnames]{xcolor} % Färger för tikz
+\usepackage{tikz} % Rita figurer
+\usepackage[swedish]{babel} % Svenskt datum
+\usepackage{amsmath} % Mattesymboler
+\usepackage{amssymb} % Ditto
+\usepackage{bm} % Bold in math
+\usepackage[parfill]{parskip} % Tar bort automatisk intendering vid nytt stycke
+\setlength{\parskip}{1.2em} % Avstånd mellan stycken
+\usepackage[a4paper, total={15cm, 21cm}]{geometry} % Ändrar sidobredd samt höjd
+%\usepackage[none]{hyphenat} 
+%\righthyphenmin=62
+%\lefthyphenmin=62
+\usepackage{hyperref} % Länkar
+\tolerance=1    % Ingen ordbrytning (alltså när ord inte får plats)
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\usepackage{xfrac}
+
+\usepackage{float} % Fixa så bilder hamnar där de ska
+
+
+\begin{document}
+
+
+\begin{center}
+\huge{\bfseries Analys av lindans - komplettering}\\[3cm]
+\Large{David \textsc{Combler}\\
+        Samuel \textsc{Johansson}\\
+        Sebastian \textsc{Ragnarsson}\\
+        Jesper \textsc{Wrang}}\\[2cm]
+       {\Large \today}\\[3cm]
+\end{center}
+\newpage
+\section{Systemanalys}
+På sida 6 skriver vi att vi ska ta fram systemegenskaper för att sedan kunna analysera systemet. I själva verket är det systemet vi ska analyserar för att sedan kunna bestämma vilka egenskaperna som system har.
+
+\section{Frekvensdomänen}
+På sida 7 skriver vi att exempelsignalen $x(t) = 3sin(2t) + sin(4t)$ kan ses som summan av två amplituder. Detta kan lätt misstolkas och vi skulle istället sagt att signalen är/kan ses som summan av två sinusfunktioner. 
+
+I figurtexten på samma sida skriver vi ''Tidsdomänen och frekvensdomänen av signalen..'', men vi menar istället signalen betraktat i tids- respektive frekvensdomänen.
+
+\section{Systemfunktion}
+På sida 8 talar vi inte om varför vårt system är kausalt. Vårt system är kausalt eftersom att det är ett fysikaliskt/realiserbart system. Vidare förklarar vi inte hur detta innebär att vi får använda den enkelsidiga laplacetransformen. Anledningen till att vi kan använda den enkelsidiga transformen om systemet är kausalt är för att impulssvaret $h(t)$ är noll för alla $t < 0$ vilket leder till uträkningen:
+$$H(s) = \mathcal{L}\big\{h(t)\big\} = \int\limits_{-\infty}^{\infty} h(t)e^{-st}\,dt = \int\limits_{0-}^{\infty} h(t)e^{-st}\,dt$$
+som är den enkelsidiga transformen. Om $h(t)\ne 0$ för $t < 0$ måste den dubbelsidigia transformen användas för att få med hela signalen.
+
+\section{Val av systemparametrar}
+På sida 13 har vi fått kommentaren att vi inte har refererat till var vi kommit fram till uttrycket för fjäderkonstanten $k$. Vi härleder detta uttrycket från differentialekvationen i viloläge på sidan 4:
+$$ky_0-mg=0$$
+På samma sida fick vi också en kommentar att att vi inte motiverade att två skilda poler gav mest dämpning.
+Detta går lätt att se om man kollar på frekvensfunktionen för de 3 fallen på poler. För två skillda reella poler fås maxvärdet vid $\omega=0$ och avtar sedan för högre frekvenser. För kontrollerat gung vill vi inte komplexkonjugerade poler eftersom att det ger en resonansfrekvens.
+
+
+Man får ungefär samma effekt då man har dubbelpol.
+
+\section{Variation av impulssvaret}
+På sida 15 har vi väldigt små värden på $h(t)$ vilket kan göra det svårt att direkt se kopplingar med verkligheten. Lösningen skulle kunna vara att betrakta en större insignal. Exempelvis $100$ gånger större. Eftersom vårt system är linjärt skulle dock grafen bli exakt likadan bortsett från att y-axeln skulle bli $100$ gånger större. Insignalen vi betraktar är en momentan puls på 1 N vilket är en mycket liten kraft och utsignalen är distansavvikelsen, det är rimligt att en så liten kraftpåverkan ger en mycket liten distansavvikelse. Om vi istället betraktat en kraft på 100 N skulle en distansavvikelse på ungefär 1 m fås, vilket också verkar rimligt då 100 N ungefär motsvarar 10 kg.
+
+På samma sida fick vi en kommentar om vilka poluppsättningar som de tre olika fallen har. Då vikten är 20 och 75 \textit{kg} har vi två reella poler och för 200 \textit{kg} är det komplexkonjugerade poler.
+
+På sida 16 fick en fråga om vilka pollägen vi har för de 3 fall som vi kollar på. Vi var väldigt otydliga här och nämnde aldrig vilka fall i fick då vi varierade systemparametrarna. I alla grafter som vi varierar någonting i har vi alltid två fall av reella dubbelpoler och ett fall av komplex poler.
+
+Anledning varför vi inte har ett av varje är för att vår standardparameteruppsättning ligger "nära" dubbelpolen, alltså att det är väldigt lite skillnad mellan standardparameterupsättningen och dubbelpolen. Därför tycker vi det var mer intressant att variera parametrarna så att det blev så mycket variation mellan polerna så möjligt men ändå att hålla sig till realistiska värden.
+
+\section{Stegsvar}
+På sida 18 påstår vi att alla faltningsintegraler för $t<0$ blir noll för de olika impulssvaren eftersom det innehåller ett enhetssteg men ger ingen vidare förklaring. 
+Vi har alltså tre impulssvar på formen:
+$$h(t)=h_1(t)u(t)$$
+och när vi vill beräkna stegsvaret för $t<0$ får vi faltningsintegralen:
+$$g(t)=(u*h)(t)=\int\limits_{-\infty}^{t}h(\tau)\,d\tau=\int\limits_{-\infty}^{t}h_1(\tau)u(\tau)\,d\tau= \bigg/ t < 0 \bigg/=\int\limits_{-\infty}^{t}h_1(\tau)\cdot 0\,d\tau=0$$
+Vi har alltså inget ''överlapp'' på impulssvaret och enhetssteget då $t<0$ och därför får vi en integral med integrand $0$ på hela intervallet som integreras.
+
+\section{Variation av stegsvaret}
+På sida 20 fick vi en kommentar om att vår stegsvar på $0.1$ kg var för litet. Vi håller med att vi borde valt ett mer realistiskt vikt då man skulle få större avvikelse på stegsvaret. Då systemet är linjärt kommer stegsvaret bara vara skalad med en faktor och ha samma form men det skulle ge ett mer realistiskt scenario som är enklare att koppla till verkliga experiment.
+
+Sedan på sida 21 fick vi igen frågan vilka poluppsättningar som vi använt då vi varierar systemvariablerna och hur stegsvaren förhåller sig till impulssvaret, polplaceringarna och frekvensfuntionen. Vi valda stora variationer då vi tyckte detta skulle ge intressanta grafter och då fick vi 2 fall av reella poler och ett fall av komplexkonjugerade poler. Gröna linjen är fallet komplexa poler i figur 12 och 13 och i figur 14 är det den röda linjen.
+
+När det gäller hur det förhåller sig till varandra kan man oftast enkelt se en liknelse mellan stegsvar och impulssvar av samma parametrar då man kan se stegsvaret som väldigt många impulssvar i följd. Till exempel ser vi i figur 10 att impulssvaret för komplexkonjugerade poler (röda sträcket) oscillerar kring viloläget vilket stegsvaret i figur 14 för samma parameteruppsättning också gör. Dock oscillerar denna kring ett annat viloläge.
+
+För komplexkonjugerade poler ser man någon form av svängning kring ett viloläge då impulssvaret och stegsvaret innehåller en term av en sinusfunktion. För 2 reella poler och dubbelpol ser man dock inte oscillation utan impulssvaret och stegsvaret går mer direkt till det nya läget.
+
+Frekvensfunktionen är direkt relaterad till polplaceringarna då frekvensfunktionen kan ses som att man går längs $j\omega$-axel på polnollställediagramet och tar systemfunktionens värden på den axeln. Om en pol är nära $j\omega$ axeln så får det en större inverkan på frekvensfunktionen i jämförelse om den skulle vara längre bort från $j\omega$-axeln. Vid komplexkonjugerade poler är polerna inte placerade på den reella axeln vilket gör att man får störst värde på frekvensfunktionen vid ungefär samma läge som polen ligger i. Vid reella poler får man som mest bidrag vid frekvensen $0$ för frekvensfunktionen. 
+
+Utifrån frekvensfunktionen kan man se hur systemet förstärker eller dämpar signaler beroende på signalernas frekvens.
+
+\section{Stabilitet}
+På sida 24 förklarar vi dåligt hur man visar stabilitet för ett system och hur de olika sätten relaterar till varandra. Ett sätt är att visa stabilitet är att bevisa att impulssvaret är absolutintegrerbart. Då existerar också Fouriertransformen för systemet. Eftersom Fouriertransformen kan ses som Laplacetransformen då $s=j\omega$ så kan man också visa stabilitet genom att se om Laplacetransformen konvergerar för alla värden på $j\omega$-axeln, alltså om $j\omega$-axeln ligger i konvergensområdet.
+
+\section{Frekvensfunktion}
+På samma sida säger vi att Fouirertransformen är ett specialfall av Laplacetransformen. Detta gäller oftast men i vissa fall har man utökat definitionen av Fouriertransformen så att den även gäller för signaler som inte är absolutintegrerbara, till exempel sinusfunktionen. Sinusfunktionen blir två diracer om man Fouriertransformerar den.
+
+Vi är också otydliga med att förklar vad Fouriertransformen faktiskt är och hur man tolkar den. Denna transform är ett sätt överföra en funktion från tidsdomänen till frekvensdomänen och den definieras som:
+$$H(\omega)=\int\limits_{-\infty}^{\infty}h(t)e^{-i\omega t}\,dt$$
+Denna definition liknar väldigt mycket den dubbelsidiga Laplacetransformen och man kan se Fouriertransformen som att gå längs $j\omega$-axeln på Laplacetransformen, (om den ingår i konvergensområdet så klart).
+
+\section{Amplitudkaraktäristik}
+På sida 25 säger vi att ''systemet släpper igenom låga frekvenser och dämpar höga frekvenser''. Detta är missledande då det systemet inte kan påverka frekvensen av signalen utan vi menar så klart styrkan av en signalen med en viss frekvens. Om vi hade en sinus-signal så skulle alltså amplituden dämpas eller förstärkas medan frekvensen skulle behållas.
+
+\section{Variation av amplitudkaraktäristik}
+På sida 28 nämner vi kort resonansfrekvens men vi talar aldrig om vad det faktiskt är för något. Resonansfrekvensen är den frekvens där systemet förstärker som mest, alltså den frekvens som ger maxvärdet av amplitudkaraktäristiken.
+
+På samma sida är det också väldigt otydligt varför resonansfrekvensen är som den är i de 3 olika fallen.
+Ser man istället på polnollställediagramet skulle resonansfrekvensen ligga på ungefär på samma höjd som den pol som är närmast $j\omega$-axeln. För komplexkonjugerade poler är denna resonansfrekvens nollskild då polerna inte ligger på den reella axeln. För reella poler är resonansfrekvensen $0$ då polerna ligger på den reella axeln.
+
+\section{Faskaraktäristik}
+På sida 29 säger vi att faskaratäristiken inte är intressant för vårt system men förklarar aldrig varför den inte är intressant. Då faskaraktäristiken är ett sätt att se hur systemet förskjuter signaler beroende på frekvens, skulle det i vårt fall vara hur lång fördröjning linan hade på att ''svara'' på insignalen. Vi tyckte inte detta var särkilt intressant utan det var viktigare för hur mycket den svängde och inte när den svänger. Faskaraktäristiken är inte ointressant i sig själv, vi tyckte bara det inte hade gett något att analysera den på nivån som vi gjorde för amplitudkaraktäristiken.
+
+\section{Stationära sinussignaler}
+På sida 30 glömmer vi att nämna att LTI-systemet måste vara stabilt för att man ska kunna använda ''sinus in sinus ut''-egenskapen för att slippa använda faltning eller multiplikation i frekvensdoämnen. Om system inte är stabilt så existerar inte frekvensfunktionen vilket krävs för att räkna ut utsignalen via: $$y(t)=A\,\big|H(\omega_0)\big|\sin\big(\omega_0t+\arg\big\{H(\omega_0)\big\}\big)$$
+\end{document}
